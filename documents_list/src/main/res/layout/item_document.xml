@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/iv_placeholder"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="13dp"
+        android:layout_marginBottom="6dp"
+        android:src="@drawable/ic_placeholder_document_text_72"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/tv_filename"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_filename"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@id/tv_parameters"
+        app:layout_constraintEnd_toStartOf="@+id/ib_more"
+        app:layout_constraintStart_toEndOf="@+id/iv_placeholder"
+        app:layout_constraintTop_toTopOf="@id/iv_placeholder"
+        tools:text="password" />
+
+    <TextView
+        android:id="@+id/tv_parameters"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@id/tv_tags"
+        app:layout_constraintEnd_toEndOf="@id/tv_filename"
+        app:layout_constraintStart_toStartOf="@id/tv_filename"
+        app:layout_constraintTop_toBottomOf="@id/tv_filename"
+        tools:text="TXT · 0 КБ · 18 авг" />
+
+    <TextView
+        android:id="@+id/tv_tags"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/ic_tag_12"
+        android:drawablePadding="6dp"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@id/iv_placeholder"
+        app:layout_constraintEnd_toEndOf="@id/tv_parameters"
+        app:layout_constraintStart_toStartOf="@id/tv_parameters"
+        app:layout_constraintTop_toBottomOf="@id/tv_parameters"
+        tools:text="биржа, данные, биткоин, парол…" />
+
+    <ImageButton
+        android:id="@+id/ib_more"
+        android:layout_width="36dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="18dp"
+        android:src="@drawable/ic_more_vertical_16"
+        app:layout_constraintBottom_toBottomOf="@id/iv_placeholder"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tv_filename"
+        app:layout_constraintTop_toTopOf="@id/iv_placeholder" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
