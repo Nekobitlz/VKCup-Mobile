@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:background="@color/itemBackground">
 
     <ImageView
         android:id="@+id/iv_placeholder"
@@ -23,6 +24,7 @@
         android:id="@+id/tv_filename"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:textColor="@color/colorPrimaryText"
         android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@id/tv_parameters"
         app:layout_constraintEnd_toStartOf="@+id/ib_more"
@@ -34,6 +36,7 @@
         android:id="@+id/tv_parameters"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:textColor="@color/colorSecondaryText"
         android:textSize="14sp"
         app:layout_constraintBottom_toTopOf="@id/tv_tags"
         app:layout_constraintEnd_toEndOf="@id/tv_filename"
@@ -47,6 +50,7 @@
         android:layout_height="wrap_content"
         android:drawableStart="@drawable/ic_tag_12"
         android:drawablePadding="6dp"
+        android:textColor="@color/colorSecondaryText"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="@id/iv_placeholder"
         app:layout_constraintEnd_toEndOf="@id/tv_parameters"
@@ -62,6 +66,7 @@
         android:layout_marginTop="18dp"
         android:layout_marginEnd="4dp"
         android:layout_marginBottom="18dp"
+        android:background="@color/itemBackground"
         android:src="@drawable/ic_more_vertical_16"
         app:layout_constraintBottom_toBottomOf="@id/iv_placeholder"
         app:layout_constraintEnd_toEndOf="parent"
