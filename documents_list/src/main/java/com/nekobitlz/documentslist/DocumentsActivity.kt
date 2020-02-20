@@ -1,8 +1,8 @@
 package com.nekobitlz.documentslist
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.nekobitlz.documentslist.features.DocumentsFragment
+import androidx.appcompat.app.AppCompatActivity
+import com.nekobitlz.documentslist.features.auth.AuthFragment
 
 class DocumentsActivity : AppCompatActivity() {
 
@@ -13,7 +13,7 @@ class DocumentsActivity : AppCompatActivity() {
         if (savedInstanceState == null) {
             supportFragmentManager
                 .beginTransaction()
-                .replace(R.id.container, DocumentsFragment())
+                .replace(R.id.container, AuthFragment())
                 .commit()
         }
     }
