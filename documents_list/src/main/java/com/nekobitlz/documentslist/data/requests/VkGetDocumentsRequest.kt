@@ -1,13 +1,14 @@
-package com.nekobitlz.documentslist.data
+package com.nekobitlz.documentslist.data.requests
 
+import com.nekobitlz.documentslist.data.VKDocument
 import com.vk.api.sdk.requests.VKRequest
 import org.json.JSONObject
 
-class VkDocumentsRequest(count: Int = 1, offset: Int = 0, ownerId: Int, returnTags: Int = 1) :
+class VkGetDocumentsRequest(count: Int = 1, offset: Int = 0, ownerId: Int, returnTags: Int = 1) :
     VKRequest<List<VKDocument>>("docs.get") {
 
     init {
-    //    addParam("count", count)
+        //    addParam("count", count)
         addParam("offset", offset)
         addParam("owner_id", ownerId)
         addParam("return_tags", returnTags)
