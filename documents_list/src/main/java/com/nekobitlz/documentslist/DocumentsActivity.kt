@@ -18,7 +18,9 @@ class DocumentsActivity : AppCompatActivity() {
         setContentView(R.layout.activity_documents)
         supportActionBar?.elevation = 0F
 
-        checkLoginState()
+        if (savedInstanceState == null) {
+            checkLoginState()
+        }
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
