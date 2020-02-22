@@ -14,4 +14,5 @@
     <dimen name="placeholder_size_72">72dp</dimen>
     <dimen name="more_button_width_36">36dp</dimen>
     <dimen name="more_button_height_48">48dp</dimen>
+    <dimen name="popup_elevation_10">10dp</dimen>
 </resources>
