@@ -104,7 +104,7 @@ class DocumentsFragment : Fragment(), DialogEventListener {
 
     private fun showRenameDialog(item: VKDocument) {
         val fragmentManager = requireActivity().supportFragmentManager
-        RenameDialog(item).also {
+        RenameDialog.newInstance(item).also {
             it.setTargetFragment(this@DocumentsFragment, 0)
             it.show(fragmentManager, RENAME_DIALOG)
         }
@@ -112,7 +112,7 @@ class DocumentsFragment : Fragment(), DialogEventListener {
 
     private fun showDeleteDialog(item: VKDocument) {
         val fragmentManager = requireActivity().supportFragmentManager
-        DeleteDialog(item).also {
+        DeleteDialog.newInstance(item).also {
             it.setTargetFragment(this@DocumentsFragment, 0)
             it.show(fragmentManager, DELETE_DIALOG)
         }

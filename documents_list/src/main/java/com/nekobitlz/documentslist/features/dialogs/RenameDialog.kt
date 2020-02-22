@@ -6,12 +6,11 @@ import android.content.Context
 import android.os.Bundle
 import android.widget.EditText
 import android.widget.LinearLayout
-import androidx.core.view.marginRight
 import androidx.fragment.app.DialogFragment
 import com.nekobitlz.documentslist.R
 import com.nekobitlz.documentslist.data.VKDocument
 
-class RenameDialog(private val item: VKDocument) : DialogFragment() {
+class RenameDialog : DialogFragment() {
 
     private lateinit var listener: DialogEventListener
 
@@ -32,6 +31,8 @@ class RenameDialog(private val item: VKDocument) : DialogFragment() {
             LinearLayout.LayoutParams.MATCH_PARENT
         )
 
+        val item = requireArguments().getSerializable(DOCUMENT_KEY) as VKDocument
+
         return AlertDialog
             .Builder(requireContext())
             .setMessage(resources.getString(R.string.dialog_rename_message))
@@ -43,5 +44,18 @@ class RenameDialog(private val item: VKDocument) : DialogFragment() {
                 dialogInterface.cancel()
             }
             .create()
+    }
+
+    companion object {
+
+        private const val DOCUMENT_KEY = "DOCUMENT_KEY"
+
+        fun newInstance(item: VKDocument): RenameDialog {
+            val args = Bundle()
+            args.putSerializable(DOCUMENT_KEY, item)
+            val fragment = RenameDialog()
+            fragment.arguments = args
+            return fragment
+        }
     }
 }

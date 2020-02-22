@@ -4,6 +4,7 @@ import com.nekobitlz.documentslist.utils.toStringList
 import com.nekobitlz.documentslist.utils.toHumanReadableDate
 import com.nekobitlz.documentslist.utils.toHumanReadableSize
 import org.json.JSONObject
+import java.io.Serializable
 
 data class VKDocument(
     val id: Int,
@@ -16,7 +17,7 @@ data class VKDocument(
     val type: Int,
     val tags: String
 //  val preview ??
-) {
+) : Serializable {
     fun getParameters(): String {
         return "${ext.toUpperCase()} · ${size.toHumanReadableSize()} · ${date.toHumanReadableDate()}".trim()
     }

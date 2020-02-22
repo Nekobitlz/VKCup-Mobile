@@ -9,7 +9,7 @@ import com.nekobitlz.documentslist.R
 import com.nekobitlz.documentslist.data.VKDocument
 import java.lang.ClassCastException
 
-class DeleteDialog(private val item: VKDocument) : DialogFragment() {
+class DeleteDialog : DialogFragment() {
 
     private lateinit var listener: DialogEventListener
 
@@ -24,6 +24,8 @@ class DeleteDialog(private val item: VKDocument) : DialogFragment() {
     }
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
+        val item = requireArguments().getSerializable(DOCUMENT_KEY) as VKDocument
+
         return AlertDialog
             .Builder(requireContext())
             .setMessage("${resources.getString(R.string.dialog_delete_message)} ${item.title}?")
@@ -34,5 +36,18 @@ class DeleteDialog(private val item: VKDocument) : DialogFragment() {
                 dialogInterface.cancel()
             }
             .create()
+    }
+
+    companion object {
+
+        private const val DOCUMENT_KEY = "DOCUMENT_KEY"
+
+        fun newInstance(item: VKDocument): DeleteDialog {
+            val args = Bundle()
+            args.putSerializable(DOCUMENT_KEY, item)
+            val fragment = DeleteDialog()
+            fragment.arguments = args
+            return fragment
+        }
     }
 }
