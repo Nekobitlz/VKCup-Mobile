@@ -17,58 +17,65 @@ class DocumentsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_documents)
 
-        if (VK.isLoggedIn()) {
-            val token = VKAccessToken.restore(
-                applicationContext.getSharedPreferences(
-                    SHARED_PREFS_NAME, Context.MODE_PRIVATE
-                )
-            )
-
-            if (token == null) {
-                VK.logout()
-            } else {
-
-                val fragment = DocumentsFragment()
-                fragment.arguments =
-                    Bundle().apply { putInt(USER_ID, token.userId) }
-
-                supportFragmentManager
-                    .beginTransaction()
-                    .replace(R.id.container, fragment)
-                    .commitAllowingStateLoss()
-            }
-        } else {
-            VK.login(this, arrayListOf(VKScope.DOCS))
-        }
+        checkLoginState()
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         val callback = object : VKAuthCallback {
             override fun onLogin(token: VKAccessToken) {
-                token.save(
-                    applicationContext.getSharedPreferences(
-                        SHARED_PREFS_NAME,
-                        Context.MODE_PRIVATE
-                    )
-                )
-
-                val fragment = DocumentsFragment()
-                fragment.arguments = Bundle().apply { putInt(USER_ID, token.userId) }
-
-                supportFragmentManager
-                    .beginTransaction()
-                    .replace(R.id.container, fragment)
-                    .commitAllowingStateLoss()
+                saveToken(token)
+                openDocumentsFragment(token)
             }
 
             override fun onLoginFailed(errorCode: Int) {
                 Toast.makeText(baseContext, "Login Failed", Toast.LENGTH_LONG).show()
+                finish()
             }
         }
 
         if (!VK.onActivityResult(requestCode, resultCode, data, callback)) {
             super.onActivityResult(requestCode, resultCode, data)
         }
+    }
+
+    private fun checkLoginState() {
+        if (VK.isLoggedIn()) {
+            val token = restoreToken()
+
+            if (token == null) {
+                login()
+            } else {
+                openDocumentsFragment(token)
+            }
+        } else {
+            login()
+        }
+    }
+
+    private fun login() {
+        VK.login(this, arrayListOf(VKScope.DOCS, VKScope.OFFLINE))
+    }
+
+    private fun restoreToken(): VKAccessToken? = VKAccessToken.restore(
+        applicationContext.getSharedPreferences(
+            SHARED_PREFS_NAME, Context.MODE_PRIVATE
+        )
+    )
+
+    private fun saveToken(token: VKAccessToken) {
+        token.save(
+            applicationContext.getSharedPreferences(SHARED_PREFS_NAME, Context.MODE_PRIVATE)
+        )
+    }
+
+    private fun openDocumentsFragment(token: VKAccessToken) {
+        val fragment = DocumentsFragment()
+        fragment.arguments = Bundle().apply { putInt(USER_ID, token.userId) }
+
+        supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.container, fragment)
+            .commitAllowingStateLoss()
     }
 
     companion object {
