@@ -46,6 +46,9 @@ class DocumentsViewHolder(itemView: View, private val onClick: (VKDocument, Clic
 
     fun bind(document: VKDocument) {
         itemView.apply {
+            setOnClickListener {
+                onClick(document, ClickType.OPEN)
+            }
             tv_filename.text = document.title
             tv_parameters.text = document.getParameters()
             iv_placeholder.clipToOutline = true

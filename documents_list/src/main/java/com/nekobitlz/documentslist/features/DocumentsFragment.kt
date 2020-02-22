@@ -1,5 +1,6 @@
 package com.nekobitlz.documentslist.features
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -16,6 +17,7 @@ import com.nekobitlz.documentslist.features.dialogs.DeleteDialog
 import com.nekobitlz.documentslist.features.dialogs.DialogEventListener
 import com.nekobitlz.documentslist.features.dialogs.RenameDialog
 import kotlinx.android.synthetic.main.fragment_documents.*
+import android.net.Uri
 
 class DocumentsFragment : Fragment(), DialogEventListener {
 
@@ -25,6 +27,7 @@ class DocumentsFragment : Fragment(), DialogEventListener {
 
     private val onClick: (VKDocument, ClickType) -> Boolean = { document, type ->
         when (type) {
+            ClickType.OPEN -> openDocument(document)
             ClickType.RENAME -> showRenameDialog(document)
             ClickType.DELETE -> showDeleteDialog(document)
         }
@@ -113,6 +116,16 @@ class DocumentsFragment : Fragment(), DialogEventListener {
             it.setTargetFragment(this@DocumentsFragment, 0)
             it.show(fragmentManager, DELETE_DIALOG)
         }
+    }
+
+    private fun openDocument(item: VKDocument) {
+        val uri = Uri.parse(item.url)
+        val intent = Intent(Intent.ACTION_VIEW, uri)
+
+        intent.setDataAndType(uri, item.getType().intentType)
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+
+        startActivity(intent)
     }
 
     companion object {
