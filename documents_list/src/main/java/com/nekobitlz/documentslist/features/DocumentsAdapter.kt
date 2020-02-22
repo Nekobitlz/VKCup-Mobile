@@ -1,10 +1,12 @@
 package com.nekobitlz.documentslist.features
 
+import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.View.GONE
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.PopupMenu
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -14,12 +16,15 @@ import com.nekobitlz.documentslist.data.VkDocumentType.*
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.item_document.view.*
 
-class DocumentsAdapter : ListAdapter<VKDocument, DocumentsViewHolder>(DocumentsDiffUtil) {
+class DocumentsAdapter(private val onClick: (VKDocument, ClickType) -> Boolean) :
+    ListAdapter<VKDocument, DocumentsViewHolder>(DocumentsDiffUtil) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DocumentsViewHolder {
-        val itemView =
-            LayoutInflater.from(parent.context).inflate(R.layout.item_document, parent, false)
-        return DocumentsViewHolder(itemView)
+        val itemView = LayoutInflater
+            .from(parent.context)
+            .inflate(R.layout.item_document, parent, false)
+
+        return DocumentsViewHolder(itemView, onClick)
     }
 
     override fun onBindViewHolder(holder: DocumentsViewHolder, position: Int) {
@@ -36,7 +41,8 @@ class DocumentsAdapter : ListAdapter<VKDocument, DocumentsViewHolder>(DocumentsD
     }
 }
 
-class DocumentsViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+class DocumentsViewHolder(itemView: View, private val onClick: (VKDocument, ClickType) -> Boolean) :
+    RecyclerView.ViewHolder(itemView) {
 
     fun bind(document: VKDocument) {
         itemView.apply {
@@ -60,7 +66,29 @@ class DocumentsViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
                 BOOK -> iv_placeholder.setImageResource(R.drawable.ic_placeholder_document_book_72)
                 OTHERS -> iv_placeholder.setImageResource(R.drawable.ic_placeholder_document_other_72)
             }
+
+            ib_more.setOnClickListener {
+                return@setOnClickListener createPopupMenu(document)
+            }
         }
+    }
+
+    private fun createPopupMenu(document: VKDocument) {
+        val popup = PopupMenu(itemView.context, itemView, Gravity.END)
+        popup.menuInflater.inflate(R.menu.menu_document, popup.menu)
+        popup.setOnMenuItemClickListener {
+            when (it.itemId) {
+                R.id.item_rename -> {
+                    onClick(document, ClickType.RENAME)
+                }
+                R.id.item_delete -> {
+                    onClick(document, ClickType.DELETE)
+                }
+                else -> true
+            }
+        }
+
+        return popup.show()
     }
 
     private fun loadImageFromUrl(url: String, imageView: ImageView) = Picasso
