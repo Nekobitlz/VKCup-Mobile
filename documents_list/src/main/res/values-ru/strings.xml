@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Документы</string>
+    <string name="menu_rename">Переименовать</string>
+    <string name="menu_delete">Удалить документ</string>
+
+    <string name="dialog_success">Успешно!</string>
+    <string name="dialog_cancel">Отмена</string>
+    <string name="dialog_error">Возникла непредвиденная ошибка</string>
+
+    <string name="dialog_delete_message">Вы уверены, что хотите удалить</string>
+    <string name="dialog_delete_confirm">Удалить</string>
+    <string name="dialog_delete_success">Успешно удалено!</string>
+
+    <string name="dialog_rename_message">Введите новое имя</string>
+    <string name="dialog_rename_confirm">Подтвердить</string>
+    <string name="dialog_rename_success">Успешно переименовано!</string>
+</resources>

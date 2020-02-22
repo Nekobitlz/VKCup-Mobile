@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Documents</string>
     <string name="menu_rename">Rename</string>
-    <string name="menu_delete">Delete</string>
+    <string name="menu_delete">Delete document</string>
 
     <string name="dialog_success">Success!</string>
     <string name="dialog_cancel">Cancel</string>
