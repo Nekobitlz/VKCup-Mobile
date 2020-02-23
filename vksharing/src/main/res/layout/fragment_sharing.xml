@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/layout_margin_48"
+        android:src="@drawable/ic_share_outline_56" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_normal_12"
+        android:gravity="center"
+        android:maxLines="1"
+        android:text="@string/sharing_title"
+        android:textColor="@color/colorPrimaryText"
+        android:textSize="@dimen/font_large_20" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_small_8"
+        android:gravity="center"
+        android:text="@string/sharing_subtitle"
+        android:textSize="@dimen/font_normal_16" />
+
+    <Button
+        android:id="@+id/btn_choose_photo"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/button_height_36"
+        android:layout_marginTop="@dimen/spacing_large_24"
+        android:layout_marginBottom="@dimen/layout_margin_48"
+        android:background="@drawable/rounded_button"
+        android:paddingStart="@dimen/spacing_average_16"
+        android:paddingEnd="@dimen/spacing_average_16"
+        android:text="@string/sharing_button_text"
+        android:textColor="@color/colorButtonText" />
+
+</LinearLayout>
