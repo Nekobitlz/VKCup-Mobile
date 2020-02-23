@@ -8,7 +8,7 @@
     <dimen name="spacing_large_18">18dp</dimen>
     <dimen name="spacing_normal_13">13dp</dimen>
     <dimen name="spacing_small_6">6dp</dimen>
-    <dimen name="spacing_tiny_4">4dp</dimen>
+    <dimen name="spacing_tiny_3">3dp</dimen>
 
     <!-- Size elements -->
     <dimen name="placeholder_size_72">72dp</dimen>

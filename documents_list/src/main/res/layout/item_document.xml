@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@color/itemBackground">
+    android:layout_height="84dp"
+    android:background="@color/itemBackground"
+    android:orientation="horizontal">
 
     <ImageView
         android:id="@+id/iv_placeholder"
@@ -14,66 +14,56 @@
         android:layout_marginTop="@dimen/spacing_small_6"
         android:layout_marginEnd="@dimen/spacing_normal_13"
         android:layout_marginBottom="@dimen/spacing_small_6"
-        android:src="@drawable/ic_placeholder_document_text_72"
         android:background="@drawable/rounded_rectangle"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/tv_filename"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:src="@drawable/ic_placeholder_document_text_72" />
 
-    <TextView
-        android:id="@+id/tv_filename"
+    <LinearLayout
+        android:layout_weight="3"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:textColor="@color/colorPrimaryText"
-        android:maxLines="2"
-        android:textSize="@dimen/font_normal_16"
-        app:layout_constraintBottom_toTopOf="@id/tv_parameters"
-        app:layout_constraintEnd_toStartOf="@+id/ib_more"
-        app:layout_constraintStart_toEndOf="@+id/iv_placeholder"
-        app:layout_constraintTop_toTopOf="@id/iv_placeholder"
-        tools:text="password" />
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/tv_parameters"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:textColor="@color/colorSecondaryText"
-        android:textSize="@dimen/font_small_13"
-        app:layout_constraintBottom_toTopOf="@id/tv_tags"
-        app:layout_constraintEnd_toEndOf="@id/tv_filename"
-        app:layout_constraintStart_toStartOf="@id/tv_filename"
-        app:layout_constraintTop_toBottomOf="@id/tv_filename"
-        tools:text="TXT · 0 КБ · 18 авг" />
+        <TextView
+            android:id="@+id/tv_filename"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="2"
+            android:textColor="@color/colorPrimaryText"
+            android:textSize="@dimen/font_normal_16"
+            tools:text="password" />
 
-    <TextView
-        android:id="@+id/tv_tags"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:drawableStart="@drawable/ic_tag_12"
-        android:maxLines="1"
-        android:drawablePadding="@dimen/spacing_small_6"
-        android:textColor="@color/colorSecondaryText"
-        android:textSize="@dimen/font_small_13"
-        app:layout_constraintBottom_toBottomOf="@id/iv_placeholder"
-        app:layout_constraintEnd_toEndOf="@id/tv_parameters"
-        app:layout_constraintStart_toStartOf="@id/tv_parameters"
-        app:layout_constraintTop_toBottomOf="@id/tv_parameters"
-        tools:text="биржа, данные, биткоин, парол…" />
+        <TextView
+            android:id="@+id/tv_parameters"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_tiny_3"
+            android:textColor="@color/colorSecondaryText"
+            android:textSize="@dimen/font_small_13"
+            tools:text="TXT · 0 КБ · 18 авг" />
+
+        <TextView
+            android:id="@+id/tv_tags"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_tiny_3"
+            android:drawableStart="@drawable/ic_tag_12"
+            android:drawablePadding="@dimen/spacing_small_6"
+            android:maxLines="1"
+            android:textColor="@color/colorSecondaryText"
+            android:textSize="@dimen/font_small_13"
+            tools:text="биржа, данные, биткоин, парол…" />
+    </LinearLayout>
 
     <ImageButton
         android:id="@+id/ib_more"
         android:layout_width="@dimen/more_button_width_36"
         android:layout_height="@dimen/more_button_height_48"
-        android:layout_marginStart="@dimen/spacing_tiny_4"
+        android:layout_marginStart="@dimen/spacing_tiny_3"
         android:layout_marginTop="@dimen/spacing_large_18"
-        android:layout_marginEnd="@dimen/spacing_tiny_4"
+        android:layout_marginEnd="@dimen/spacing_tiny_3"
         android:layout_marginBottom="@dimen/spacing_large_18"
         android:background="@color/itemBackground"
-        android:src="@drawable/ic_more_vertical_16"
-        app:layout_constraintBottom_toBottomOf="@id/iv_placeholder"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/tv_filename"
-        app:layout_constraintTop_toTopOf="@id/iv_placeholder" />
+        android:src="@drawable/ic_more_vertical_16" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
