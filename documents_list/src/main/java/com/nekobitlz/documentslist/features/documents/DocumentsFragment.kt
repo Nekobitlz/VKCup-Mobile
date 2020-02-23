@@ -18,13 +18,11 @@ import com.nekobitlz.documentslist.features.dialogs.DialogEventListener
 import com.nekobitlz.documentslist.features.dialogs.RenameDialog
 import kotlinx.android.synthetic.main.fragment_documents.*
 import android.net.Uri
+import com.nekobitlz.documentslist.di.injector
 import com.nekobitlz.documentslist.features.dialogs.ClickType
+import com.nekobitlz.documentslist.features.documents.di.DocumentsComponent
 
 class DocumentsFragment : Fragment(), DialogEventListener {
-
-    private val documentsViewModelFactory: DocumentsViewModelFactory by lazy {
-        DocumentsViewModelFactory(userId)
-    }
 
     private val onClick: (VKDocument, ClickType) -> Boolean = { document, type ->
         when (type) {
@@ -35,14 +33,18 @@ class DocumentsFragment : Fragment(), DialogEventListener {
         true
     }
 
-    private var userId: Int = 0
-    private val adapter: DocumentsAdapter =
-        DocumentsAdapter(onClick)
+    private val documentsViewModelFactory: DocumentsViewModelFactory by lazy {
+        component.documentsViewModelFactory
+    }
+
+    private val adapter: DocumentsAdapter = DocumentsAdapter(onClick)
     private lateinit var viewModel: DocumentsViewModel
+    private lateinit var component: DocumentsComponent
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        userId = arguments?.getInt(USER_ID)!!
+        val userId = arguments?.getInt(USER_ID)!!
+        component = injector.getDocumentsModule(userId)
     }
 
     override fun onCreateView(

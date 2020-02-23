@@ -3,21 +3,17 @@ package com.nekobitlz.documentslist.features.documents
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.nekobitlz.documentslist.data.repository.DocumentsRepository
 import com.nekobitlz.documentslist.data.repository.IDocumentsRepository
 import com.nekobitlz.documentslist.data.models.VKDocument
 
 class DocumentsViewModel(
-    userId: Int
+    private val documentsRepository: IDocumentsRepository
 ) : ViewModel() {
 
-    val documentsRepository: IDocumentsRepository
     lateinit var dialogEvent: LiveData<Int>
     var docs: LiveData<List<VKDocument>>
 
     init {
-        documentsRepository =
-            DocumentsRepository(userId)
         docs = documentsRepository.getDocuments()
     }
 
