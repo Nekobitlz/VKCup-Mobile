@@ -1,4 +1,4 @@
-package com.nekobitlz.documentslist.features
+package com.nekobitlz.documentslist.features.documents
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider

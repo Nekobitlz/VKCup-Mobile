@@ -1,7 +1,8 @@
-package com.nekobitlz.documentslist.data
+package com.nekobitlz.documentslist.data.repository
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import com.nekobitlz.documentslist.data.models.VKDocument
 import com.nekobitlz.documentslist.data.requests.VkDeleteDocumentRequest
 import com.nekobitlz.documentslist.data.requests.VkGetDocumentsRequest
 import com.nekobitlz.documentslist.data.requests.VkRenameDocumentRequest
@@ -14,7 +15,8 @@ interface IDocumentsRepository {
     fun delete(document: VKDocument): LiveData<Int>
 }
 
-class DocumentsRepository(private val userId: Int) : IDocumentsRepository {
+class DocumentsRepository(private val userId: Int) :
+    IDocumentsRepository {
 
     override fun getDocuments(): LiveData<List<VKDocument>> {
         val documentsRequest = VkGetDocumentsRequest(ownerId = userId)

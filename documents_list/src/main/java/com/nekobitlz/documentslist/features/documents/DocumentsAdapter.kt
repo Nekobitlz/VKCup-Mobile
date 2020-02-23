@@ -1,4 +1,4 @@
-package com.nekobitlz.documentslist.features
+package com.nekobitlz.documentslist.features.documents
 
 import android.view.Gravity
 import android.view.LayoutInflater
@@ -11,8 +11,9 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.nekobitlz.documentslist.R
-import com.nekobitlz.documentslist.data.VKDocument
-import com.nekobitlz.documentslist.data.VkDocumentType.*
+import com.nekobitlz.documentslist.data.models.VKDocument
+import com.nekobitlz.documentslist.data.models.VkDocumentType.*
+import com.nekobitlz.documentslist.features.dialogs.ClickType
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.item_document.view.*
 

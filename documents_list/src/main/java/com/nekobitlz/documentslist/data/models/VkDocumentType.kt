@@ -1,4 +1,4 @@
-package com.nekobitlz.documentslist.data
+package com.nekobitlz.documentslist.data.models
 
 enum class VkDocumentType(val typeId: Int, val intentType: String) {
     TEXT(1, "text/*"),

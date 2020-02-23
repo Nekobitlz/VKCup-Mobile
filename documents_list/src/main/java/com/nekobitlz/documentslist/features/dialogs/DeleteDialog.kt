@@ -6,7 +6,7 @@ import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.DialogFragment
 import com.nekobitlz.documentslist.R
-import com.nekobitlz.documentslist.data.VKDocument
+import com.nekobitlz.documentslist.data.models.VKDocument
 import java.lang.ClassCastException
 
 class DeleteDialog : DialogFragment() {

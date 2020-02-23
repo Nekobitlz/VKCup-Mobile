@@ -8,7 +8,7 @@ import android.widget.EditText
 import android.widget.LinearLayout
 import androidx.fragment.app.DialogFragment
 import com.nekobitlz.documentslist.R
-import com.nekobitlz.documentslist.data.VKDocument
+import com.nekobitlz.documentslist.data.models.VKDocument
 
 class RenameDialog : DialogFragment() {
 

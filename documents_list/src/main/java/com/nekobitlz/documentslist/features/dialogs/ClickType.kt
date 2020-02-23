@@ -1,4 +1,4 @@
-package com.nekobitlz.documentslist.features
+package com.nekobitlz.documentslist.features.dialogs
 
 enum class ClickType {
     OPEN,

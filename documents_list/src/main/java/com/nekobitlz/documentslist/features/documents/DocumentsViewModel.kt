@@ -1,11 +1,11 @@
-package com.nekobitlz.documentslist.features
+package com.nekobitlz.documentslist.features.documents
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.nekobitlz.documentslist.data.DocumentsRepository
-import com.nekobitlz.documentslist.data.IDocumentsRepository
-import com.nekobitlz.documentslist.data.VKDocument
+import com.nekobitlz.documentslist.data.repository.DocumentsRepository
+import com.nekobitlz.documentslist.data.repository.IDocumentsRepository
+import com.nekobitlz.documentslist.data.models.VKDocument
 
 class DocumentsViewModel(
     userId: Int
@@ -16,7 +16,8 @@ class DocumentsViewModel(
     var docs: LiveData<List<VKDocument>>
 
     init {
-        documentsRepository = DocumentsRepository(userId)
+        documentsRepository =
+            DocumentsRepository(userId)
         docs = documentsRepository.getDocuments()
     }
 

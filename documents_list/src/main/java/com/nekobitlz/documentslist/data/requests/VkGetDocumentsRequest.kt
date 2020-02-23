@@ -1,6 +1,6 @@
 package com.nekobitlz.documentslist.data.requests
 
-import com.nekobitlz.documentslist.data.VKDocument
+import com.nekobitlz.documentslist.data.models.VKDocument
 import com.vk.api.sdk.requests.VKRequest
 import org.json.JSONObject
 

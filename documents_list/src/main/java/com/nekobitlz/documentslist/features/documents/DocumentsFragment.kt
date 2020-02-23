@@ -1,4 +1,4 @@
-package com.nekobitlz.documentslist.features
+package com.nekobitlz.documentslist.features.documents
 
 import android.content.Intent
 import android.os.Bundle
@@ -12,12 +12,13 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.nekobitlz.documentslist.DocumentsActivity.Companion.USER_ID
 import com.nekobitlz.documentslist.R
-import com.nekobitlz.documentslist.data.VKDocument
+import com.nekobitlz.documentslist.data.models.VKDocument
 import com.nekobitlz.documentslist.features.dialogs.DeleteDialog
 import com.nekobitlz.documentslist.features.dialogs.DialogEventListener
 import com.nekobitlz.documentslist.features.dialogs.RenameDialog
 import kotlinx.android.synthetic.main.fragment_documents.*
 import android.net.Uri
+import com.nekobitlz.documentslist.features.dialogs.ClickType
 
 class DocumentsFragment : Fragment(), DialogEventListener {
 
@@ -35,7 +36,8 @@ class DocumentsFragment : Fragment(), DialogEventListener {
     }
 
     private var userId: Int = 0
-    private val adapter: DocumentsAdapter = DocumentsAdapter(onClick)
+    private val adapter: DocumentsAdapter =
+        DocumentsAdapter(onClick)
     private lateinit var viewModel: DocumentsViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -106,7 +108,9 @@ class DocumentsFragment : Fragment(), DialogEventListener {
         val fragmentManager = requireActivity().supportFragmentManager
         RenameDialog.newInstance(item).also {
             it.setTargetFragment(this@DocumentsFragment, 0)
-            it.show(fragmentManager, RENAME_DIALOG)
+            it.show(fragmentManager,
+                RENAME_DIALOG
+            )
         }
     }
 
@@ -114,7 +118,9 @@ class DocumentsFragment : Fragment(), DialogEventListener {
         val fragmentManager = requireActivity().supportFragmentManager
         DeleteDialog.newInstance(item).also {
             it.setTargetFragment(this@DocumentsFragment, 0)
-            it.show(fragmentManager, DELETE_DIALOG)
+            it.show(fragmentManager,
+                DELETE_DIALOG
+            )
         }
     }
 

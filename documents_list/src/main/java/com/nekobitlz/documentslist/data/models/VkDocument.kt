@@ -1,4 +1,4 @@
-package com.nekobitlz.documentslist.data
+package com.nekobitlz.documentslist.data.models
 
 import com.nekobitlz.documentslist.utils.toStringList
 import com.nekobitlz.documentslist.utils.toHumanReadableDate
@@ -22,7 +22,8 @@ data class VKDocument(
         return "${ext.toUpperCase()} · ${size.toHumanReadableSize()} · ${date.toHumanReadableDate()}".trim()
     }
 
-    fun getType(): VkDocumentType = VkDocumentType.createVkDocumentType(type)
+    fun getType(): VkDocumentType =
+        VkDocumentType.createVkDocumentType(type)
 
     companion object CREATOR {
 
