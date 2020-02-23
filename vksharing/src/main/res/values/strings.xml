@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">vksharing</string>
-    <string name="sharing_title">Share photos</string>
-    <string name="sharing_subtitle">Share the photo on the wall and add a description to it. description to it. Share the photo on the wall d a description to it.</string>
-    <string name="sharing_button_text">Choose photo</string>
+    <string name="welcome_title">Share photos</string>
+    <string name="welcome_subtitle">Share the photo on the wall and add a description to it. description to it. Share the photo on the wall d a description to it.</string>
+    <string name="welcome_button_text">Choose photo</string>
 </resources>

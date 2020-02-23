@@ -18,7 +18,7 @@
         android:layout_marginTop="@dimen/spacing_normal_12"
         android:gravity="center"
         android:maxLines="1"
-        android:text="@string/sharing_title"
+        android:text="@string/welcome_title"
         android:textColor="@color/colorPrimaryText"
         android:textSize="@dimen/font_large_20" />
 
@@ -27,7 +27,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/spacing_small_8"
         android:gravity="center"
-        android:text="@string/sharing_subtitle"
+        android:text="@string/welcome_subtitle"
         android:textSize="@dimen/font_normal_16" />
 
     <Button
@@ -39,7 +39,7 @@
         android:background="@drawable/rounded_button"
         android:paddingStart="@dimen/spacing_average_16"
         android:paddingEnd="@dimen/spacing_average_16"
-        android:text="@string/sharing_button_text"
+        android:text="@string/welcome_button_text"
         android:textColor="@color/colorButtonText" />
 
 </LinearLayout>
