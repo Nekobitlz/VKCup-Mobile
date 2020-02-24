@@ -16,6 +16,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/spacing_normal_12"
+        android:layout_marginStart="@dimen/spacing_huge_32"
+        android:layout_marginEnd="@dimen/spacing_huge_32"
         android:gravity="center"
         android:maxLines="1"
         android:text="@string/welcome_title"
@@ -27,6 +29,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/spacing_small_8"
         android:gravity="center"
+        android:layout_marginStart="@dimen/spacing_huge_32"
+        android:layout_marginEnd="@dimen/spacing_huge_32"
         android:text="@string/welcome_subtitle"
         android:textSize="@dimen/font_normal_16" />
 
@@ -37,9 +41,13 @@
         android:layout_marginTop="@dimen/spacing_large_24"
         android:layout_marginBottom="@dimen/layout_margin_48"
         android:background="@drawable/rounded_button"
+        android:textSize="@dimen/font_small_15"
+        android:textAllCaps="false"
         android:paddingStart="@dimen/spacing_average_16"
         android:paddingEnd="@dimen/spacing_average_16"
         android:text="@string/welcome_button_text"
         android:textColor="@color/colorButtonText" />
+
+    <!--  <include layout="@layout/bottom_sheet" /> -->
 
 </LinearLayout>
