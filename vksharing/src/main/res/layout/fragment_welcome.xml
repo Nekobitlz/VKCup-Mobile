@@ -49,6 +49,4 @@
         android:text="@string/welcome_button_text"
         android:textColor="@color/colorButtonText" />
 
-    <!--  <include layout="@layout/bottom_sheet" /> -->
-
 </LinearLayout>

@@ -18,5 +18,6 @@
     <color name="colorButton">@color/colorBlue</color>
     <color name="colorButtonText">@color/colorWhite</color>
     <color name="colorEditTextBackground">@color/colorGreyWhite</color>
+    <color name="colorBottomSheetBackground">@color/colorWhite</color>
 
 </resources>
