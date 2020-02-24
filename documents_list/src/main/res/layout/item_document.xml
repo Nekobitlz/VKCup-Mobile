@@ -18,9 +18,9 @@
         android:src="@drawable/ic_placeholder_document_text_72" />
 
     <LinearLayout
-        android:layout_weight="3"
         android:layout_width="0dp"
         android:layout_height="match_parent"
+        android:layout_weight="3"
         android:gravity="center"
         android:orientation="vertical">
 
@@ -47,7 +47,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/spacing_tiny_3"
-            android:drawableStart="@drawable/ic_tag_12"
+            android:drawableStart="@drawable/bitmap_tag"
             android:drawablePadding="@dimen/spacing_small_6"
             android:maxLines="1"
             android:textColor="@color/colorSecondaryText"
@@ -64,6 +64,6 @@
         android:layout_marginEnd="@dimen/spacing_tiny_3"
         android:layout_marginBottom="@dimen/spacing_large_18"
         android:background="@color/itemBackground"
-        android:src="@drawable/ic_more_vertical_16" />
+        android:src="@drawable/bitmap_more" />
 
 </LinearLayout>
