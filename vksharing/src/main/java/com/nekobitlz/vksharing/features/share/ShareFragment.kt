@@ -16,12 +16,11 @@ import com.nekobitlz.vksharing.R
 import com.nekobitlz.vksharing.SharingActivity.Companion.USER_ID
 import kotlinx.android.synthetic.main.bottom_sheet_share.*
 
-class ShareFragment(val userId: Int, val photoUri: Uri? = null) : BottomSheetDialogFragment() {
+class ShareFragment : BottomSheetDialogFragment() {
 
-    /*
-        private var photoUri: Uri? = null
-        private var userId: Int = 0
-    */
+    private var photoUri: Uri? = null
+    private var userId: Int = 0
+
     private lateinit var viewModel: ShareViewModel
     private val shareViewModelFactory: ShareViewModelFactory by lazy {
         ShareViewModelFactory()
@@ -34,10 +33,9 @@ class ShareFragment(val userId: Int, val photoUri: Uri? = null) : BottomSheetDia
         super.onCreate(savedInstanceState)
 
         setStyle(DialogFragment.STYLE_NORMAL, R.style.BottomSheetDialogTheme)
-/*
-        photoUri = savedInstanceState?.getParcelable(URI_TAG)
-        userId = savedInstanceState?.getInt(USER_ID)!!
-*/
+
+        photoUri = requireArguments().getParcelable(URI_TAG)
+        userId = requireArguments().getInt(USER_ID)
     }
 
     override fun onStart() {
@@ -111,7 +109,7 @@ class ShareFragment(val userId: Int, val photoUri: Uri? = null) : BottomSheetDia
             bundle.putParcelable(URI_TAG, uri)
             bundle.putInt(USER_ID, userId)
 
-            val fragment = ShareFragment(userId, uri)
+            val fragment = ShareFragment()
             fragment.arguments = bundle
 
             return fragment
