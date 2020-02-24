@@ -20,6 +20,7 @@
         android:layout_marginEnd="@dimen/spacing_huge_32"
         android:gravity="center"
         android:maxLines="1"
+        android:textStyle="bold"
         android:text="@string/welcome_title"
         android:textColor="@color/colorPrimaryText"
         android:textSize="@dimen/font_large_20" />
