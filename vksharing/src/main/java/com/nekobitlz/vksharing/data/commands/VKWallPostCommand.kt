@@ -1,7 +1,6 @@
 package com.nekobitlz.vksharing.data.commands
 
 import android.net.Uri
-import android.util.Log
 import com.nekobitlz.vksharing.data.models.VKFileUploadInfo
 import com.nekobitlz.vksharing.data.models.VKSaveInfo
 import com.nekobitlz.vksharing.data.models.VKServerUploadInfo
@@ -66,7 +65,6 @@ class VKWallPostCommand(
             .retryCount(RETRY_COUNT)
             .build()
         val fileUploadInfo = manager.execute(fileUploadCall, null, FileUploadInfoParser())
-        Log.e("DEBUG", "uploaded ${fileUploadInfo.photo}")
 
         val saveCall = VKMethodCall.Builder()
             .method("photos.saveWallPhoto")
@@ -77,7 +75,6 @@ class VKWallPostCommand(
             .build()
 
         val saveInfo = manager.execute(saveCall, SaveInfoParser())
-        Log.e("DEBUG", "saved ${saveInfo.id} ${saveInfo.ownerId}")
 
         return saveInfo.getAttachment()
     }

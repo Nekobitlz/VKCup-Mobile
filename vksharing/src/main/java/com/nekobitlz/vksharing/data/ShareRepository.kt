@@ -1,7 +1,6 @@
 package com.nekobitlz.vksharing.data
 
 import android.net.Uri
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.nekobitlz.vksharing.data.commands.VKWallPostCommand
@@ -17,7 +16,6 @@ class ShareRepository : IShareRepository {
     override fun sendPost(userId: Int, message: String, attachment: Uri?): LiveData<Int> {
         val command = VKWallPostCommand(message = message, photos = attachment, ownerId = userId)
         val data = MutableLiveData<Int>()
-        Log.e("DEBUG", "Send repos $data ${data.hasObservers()}")
 
         VK.execute(command, object : VKApiCallback<Int> {
             override fun success(result: Int) {
