@@ -1,6 +1,15 @@
 <resources>
-    <string name="app_name">vksharing</string>
+    <string name="app_name">VK Post Sharing</string>
+
     <string name="welcome_title">Share photos</string>
-    <string name="welcome_subtitle">Share the photo on the wall and add a description to it. description to it. Share the photo on the wall d a description to it.</string>
+    <string name="welcome_subtitle">Share the photo on the wall and add a description to it.</string>
     <string name="welcome_button_text">Choose photo</string>
+
+    <string name="share_title">Share on the wall</string>
+    <string name="share_edit_text_hint">Add a comment</string>
+    <string name="share_button_text">Send</string>
+
+    <string name="post_success">Successfully posted by id:</string>
+    <string name="post_failed">An error occurred while creating the post.</string>
+    <string name="post_empty_error">Post shouldn\'t be empty! Please add text or attach a photo.</string>
 </resources>
