@@ -38,6 +38,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/spacing_average_16"
+        android:inputType="text"
         android:background="@drawable/rounded_edit_text"
         android:hint="@string/share_edit_text_hint"
         android:paddingStart="@dimen/spacing_normal_12"
