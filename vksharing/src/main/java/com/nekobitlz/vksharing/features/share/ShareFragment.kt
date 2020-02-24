@@ -14,17 +14,16 @@ import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.nekobitlz.vksharing.R
 import com.nekobitlz.vksharing.SharingActivity.Companion.USER_ID
+import com.nekobitlz.vksharing.di.injector
+import com.nekobitlz.vksharing.features.share.di.ShareComponent
 import kotlinx.android.synthetic.main.bottom_sheet_share.*
 
-class ShareFragment : BottomSheetDialogFragment() {
+class ShareFragment : BottomSheetDialogFragment(), ShareComponent by injector.shareModule {
 
     private var photoUri: Uri? = null
     private var userId: Int = 0
 
     private lateinit var viewModel: ShareViewModel
-    private val shareViewModelFactory: ShareViewModelFactory by lazy {
-        ShareViewModelFactory()
-    }
 
     private val bottomBehavior
         get() = (dialog as? BottomSheetDialog)?.behavior
