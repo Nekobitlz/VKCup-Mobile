@@ -10,7 +10,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/layout_margin_48"
-        android:src="@drawable/ic_share_outline_56" />
+        android:src="@drawable/bitmap_share_outline" />
 
     <TextView
         android:layout_width="match_parent"
