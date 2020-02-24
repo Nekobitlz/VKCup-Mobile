@@ -55,7 +55,6 @@ class WelcomeFragment : Fragment() {
     }
 
     private fun sharePost(uri: Uri? = null) {
-
         val fragment = ShareFragment.newInstance(userId, uri)
         fragment.show(requireFragmentManager(), SHARE_TAG)
     }

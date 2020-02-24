@@ -4,10 +4,9 @@ import android.net.Uri
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import com.nekobitlz.vksharing.data.IShareRepository
-import com.nekobitlz.vksharing.data.ShareRepository
 
 class ShareViewModel(
-    private val repository: IShareRepository = ShareRepository()
+    private val repository: IShareRepository
 ) : ViewModel() {
 
     lateinit var requestResult: LiveData<Int>
