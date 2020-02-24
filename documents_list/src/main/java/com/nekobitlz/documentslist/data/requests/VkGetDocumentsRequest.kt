@@ -4,11 +4,10 @@ import com.nekobitlz.documentslist.data.models.VKDocument
 import com.vk.api.sdk.requests.VKRequest
 import org.json.JSONObject
 
-class VkGetDocumentsRequest(count: Int = 1, offset: Int = 0, ownerId: Int, returnTags: Int = 1) :
+class VkGetDocumentsRequest(offset: Int = 0, ownerId: Int, returnTags: Int = 1) :
     VKRequest<List<VKDocument>>("docs.get") {
 
     init {
-        //    addParam("count", count)
         addParam("offset", offset)
         addParam("owner_id", ownerId)
         addParam("return_tags", returnTags)

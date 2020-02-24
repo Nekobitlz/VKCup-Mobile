@@ -16,7 +16,6 @@ data class VKDocument(
     val date: Long,
     val type: Int,
     val tags: String
-//  val preview ??
 ) : Serializable {
     fun getParameters(): String {
         return "${ext.toUpperCase()} · ${size.toHumanReadableSize()} · ${date.toHumanReadableDate()}".trim()

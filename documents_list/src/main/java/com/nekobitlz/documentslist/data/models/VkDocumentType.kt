@@ -1,14 +1,14 @@
 package com.nekobitlz.documentslist.data.models
 
-enum class VkDocumentType(val typeId: Int, val intentType: String) {
-    TEXT(1, "text/*"),
-    ARCHIVE(2, "application/zip"),
-    GIF(3, "image/gif"),
-    IMAGE(4, "image/*"),
-    AUDIO(5, "audio/x-wav"),
-    VIDEO(6, "video/*"),
-    BOOK(7, "application/epub+zip"),
-    OTHERS(8, "*/*");
+enum class VkDocumentType(val intentType: String) {
+    TEXT("text/*"),
+    ARCHIVE("application/zip"),
+    GIF("image/gif"),
+    IMAGE("image/*"),
+    AUDIO("audio/x-wav"),
+    VIDEO("video/*"),
+    BOOK("application/epub+zip"),
+    OTHERS("*/*");
 
     companion object {
 
