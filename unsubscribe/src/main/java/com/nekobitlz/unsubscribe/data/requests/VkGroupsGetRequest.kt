@@ -8,7 +8,7 @@ class VkGroupsGetRequest(userId: Int = 153528920, extended: Boolean = true) : VK
     init {
        // addParam("user_id", userId)
         addParam("extended", if (extended) 1 else 0)
-        addParam("fields", "description,members_count")
+        addParam("fields", "description,members_count,screen_name")
     }
 
     override fun parse(r: JSONObject): List<Group> {
