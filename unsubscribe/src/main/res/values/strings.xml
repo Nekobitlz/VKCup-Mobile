@@ -7,4 +7,5 @@
     <string name="friends">friends</string>
     <string name="last_post">Last post</string>
     <string name="group_button_unsubscribe_text">Unsubscribe</string>
+    <string name="group_no_description">No description</string>
 </resources>

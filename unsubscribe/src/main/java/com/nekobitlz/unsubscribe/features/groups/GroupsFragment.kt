@@ -10,6 +10,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import com.nekobitlz.unsubscribe.R
 import com.nekobitlz.unsubscribe.data.models.Group
+import com.nekobitlz.unsubscribe.features.groupinfo.GroupInfoFragment
 import kotlinx.android.synthetic.main.fragment_groups.*
 
 class GroupsFragment : Fragment() {
@@ -26,7 +27,7 @@ class GroupsFragment : Fragment() {
     private var onClick: (Group, ClickType) -> Unit = { group, clickType ->
         when (clickType) {
             ClickType.SHORT -> {
-               viewModel.onShortClicked(group)
+                showGroupInfoDialog(group)
             }
             ClickType.LONG -> {
                 viewModel.onLongClicked()
@@ -74,7 +75,13 @@ class GroupsFragment : Fragment() {
         })
     }
 
+    private fun showGroupInfoDialog(group: Group) {
+        val fragment = GroupInfoFragment.newInstance(group)
+        fragment.show(requireFragmentManager(), GROUP_INFO_TAG)
+    }
+
     companion object {
         private const val LONG_TAP_MODE = "LONG_TAP_MODE"
+        private const val GROUP_INFO_TAG = "GROUP_INFO_TAG"
     }
 }
