@@ -1,95 +1,111 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/tv_title"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/spacing_average_16"
-        android:layout_marginTop="@dimen/spacing_average_16"
-        android:gravity="start"
-        android:textColor="@color/colorPrimaryText"
-        android:textSize="@dimen/font_normal_16"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@id/tv_followers"
-        app:layout_constraintEnd_toStartOf="@id/btn_dismiss"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="Happy Santa" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <ImageButton
-        android:id="@+id/btn_dismiss"
-        android:layout_width="@dimen/dialog_dismiss_btn_size_24"
-        android:layout_height="@dimen/dialog_dismiss_btn_size_24"
-        android:layout_marginEnd="@dimen/spacing_average_16"
-        android:background="@android:color/transparent"
-        android:src="@drawable/ic_dismiss_24"
-        app:layout_constraintBottom_toBottomOf="@id/tv_title"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/tv_title"
-        app:layout_constraintTop_toTopOf="@id/tv_title" />
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_average_16"
+            android:layout_marginTop="@dimen/spacing_average_16"
+            android:gravity="start"
+            android:textColor="@color/colorPrimaryText"
+            android:textSize="@dimen/font_normal_16"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/tv_followers"
+            app:layout_constraintEnd_toStartOf="@id/btn_dismiss"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Happy Santa" />
 
-    <TextView
-        android:id="@+id/tv_followers"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/spacing_large_24"
-        android:drawableStart="@drawable/ic_followers_outline_20"
-        android:drawablePadding="@dimen/spacing_normal_12"
-        android:textColor="@color/colorPrimaryText"
-        android:textSize="@dimen/font_small_14"
-        app:layout_constraintBottom_toTopOf="@+id/tv_description"
-        app:layout_constraintEnd_toEndOf="@id/btn_dismiss"
-        app:layout_constraintStart_toStartOf="@id/tv_title"
-        app:layout_constraintTop_toBottomOf="@id/tv_title"
-        tools:text="188,2K подписчиков · 119 друзей" />
+        <ImageButton
+            android:id="@+id/btn_dismiss"
+            android:layout_width="@dimen/dialog_dismiss_btn_size_24"
+            android:layout_height="@dimen/dialog_dismiss_btn_size_24"
+            android:layout_marginEnd="@dimen/spacing_average_16"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_dismiss_24"
+            app:layout_constraintBottom_toBottomOf="@id/tv_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tv_title"
+            app:layout_constraintTop_toTopOf="@id/tv_title" />
 
-    <TextView
-        android:id="@+id/tv_description"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/spacing_average_16"
-        android:drawableStart="@drawable/ic_article_outline_20"
-        android:drawablePadding="@dimen/spacing_normal_12"
-        android:textColor="@color/colorPrimaryText"
-        app:layout_constraintBottom_toTopOf="@id/tv_last_post"
-        app:layout_constraintEnd_toEndOf="@id/tv_followers"
-        app:layout_constraintStart_toStartOf="@id/tv_followers"
-        app:layout_constraintTop_toBottomOf="@id/tv_followers"
-        tools:text="Разрабатываем приложения для вас и ваших друзей с 2011 года." />
+        <TextView
+            android:id="@+id/tv_followers"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_large_24"
+            android:drawableStart="@drawable/ic_followers_outline_20"
+            android:drawablePadding="@dimen/spacing_normal_12"
+            android:textColor="@color/colorPrimaryText"
+            android:textSize="@dimen/font_small_14"
+            app:layout_constraintBottom_toTopOf="@+id/tv_description"
+            app:layout_constraintEnd_toEndOf="@id/btn_dismiss"
+            app:layout_constraintStart_toStartOf="@id/tv_title"
+            app:layout_constraintTop_toBottomOf="@id/tv_title"
+            tools:text="188,2K подписчиков · 119 друзей" />
 
-    <TextView
-        android:id="@+id/tv_last_post"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/spacing_average_16"
-        android:drawableStart="@drawable/ic_newsfeed_outline_20"
-        android:drawablePadding="@dimen/spacing_normal_12"
-        android:textColor="@color/colorPrimaryText"
-        app:layout_constraintBottom_toTopOf="@id/btn_send"
-        app:layout_constraintEnd_toEndOf="@id/tv_description"
-        app:layout_constraintStart_toStartOf="@id/tv_description"
-        app:layout_constraintTop_toBottomOf="@id/tv_description"
-        tools:text="Последняя запись 8 февраля" />
+        <ImageView
+            android:id="@+id/iv_description_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/spacing_normal_12"
+            android:src="@drawable/ic_article_outline_20"
+            app:layout_constraintBottom_toBottomOf="@id/tv_description"
+            app:layout_constraintEnd_toStartOf="@id/tv_description"
+            app:layout_constraintStart_toStartOf="@id/tv_followers"
+            app:layout_constraintTop_toTopOf="@id/tv_description"
+            app:layout_constraintVertical_bias="0.0" />
 
-    <Button
-        android:id="@+id/btn_send"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/spacing_large_24"
-        android:layout_marginBottom="@dimen/spacing_large_24"
-        android:background="@drawable/rounded_button"
-        android:text="@string/group_button_open_text"
-        android:textAllCaps="false"
-        android:textColor="@color/colorButtonText"
-        android:textSize="@dimen/font_normal_16"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@id/tv_last_post"
-        app:layout_constraintStart_toStartOf="@id/tv_last_post"
-        app:layout_constraintTop_toBottomOf="@id/tv_last_post" />
+        <TextView
+            android:id="@+id/tv_description"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_average_16"
+            android:textColor="@color/colorPrimaryText"
+            app:layout_constraintBottom_toTopOf="@id/tv_last_post"
+            app:layout_constraintEnd_toEndOf="@id/tv_followers"
+            app:layout_constraintStart_toEndOf="@id/iv_description_icon"
+            app:layout_constraintTop_toBottomOf="@id/tv_followers"
+            tools:text="Разрабатываем приложения для вас и ваших друзей с 2011 года." />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/tv_last_post"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_average_16"
+            android:drawableStart="@drawable/ic_newsfeed_outline_20"
+            android:drawablePadding="@dimen/spacing_normal_12"
+            android:textColor="@color/colorPrimaryText"
+            app:layout_constraintBottom_toTopOf="@id/btn_open"
+            app:layout_constraintEnd_toEndOf="@id/tv_description"
+            app:layout_constraintStart_toStartOf="@id/iv_description_icon"
+            app:layout_constraintTop_toBottomOf="@id/tv_description"
+            tools:text="Последняя запись 8 февраля" />
+
+        <Button
+            android:id="@+id/btn_open"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_large_24"
+            android:layout_marginBottom="@dimen/spacing_large_24"
+            android:background="@drawable/rounded_button"
+            android:text="@string/group_button_open_text"
+            android:textAllCaps="false"
+            android:textColor="@color/colorButtonText"
+            android:textSize="@dimen/font_normal_16"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/tv_last_post"
+            app:layout_constraintStart_toStartOf="@id/tv_last_post"
+            app:layout_constraintTop_toBottomOf="@id/tv_last_post" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>
