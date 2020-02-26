@@ -58,12 +58,13 @@ class GroupsFragment : Fragment() {
         viewModel = ViewModelProvider(this, groupsViewModelFactory)
             .get(GroupsViewModel::class.java)
 
-        viewModel.groupList.observe(viewLifecycleOwner, Observer {
+        viewModel.getGroupList().observe(viewLifecycleOwner, Observer {
             adapter.submitList(it)
         })
 
         viewModel.isLongTapMode().observe(viewLifecycleOwner, Observer {
             adapter.isLongTapMode = it
+            adapter.notifyDataSetChanged()
 
             if (it) {
                 ll_unsubscribe_hint.visibility = View.GONE
