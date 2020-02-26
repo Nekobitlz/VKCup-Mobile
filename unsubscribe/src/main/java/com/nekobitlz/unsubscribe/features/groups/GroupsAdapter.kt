@@ -20,7 +20,6 @@ class GroupsAdapter(private val onClick: (Group, ClickType) -> Unit) :
     ListAdapter<Group, GroupsAdapter.GroupsViewHolder>(GroupsDiffUtil) {
 
     var isLongTapMode = false
-    var unsubscribeCount = 0
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GroupsViewHolder {
         val itemView = LayoutInflater

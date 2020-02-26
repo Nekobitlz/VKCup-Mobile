@@ -8,19 +8,24 @@ import com.nekobitlz.unsubscribe.data.IGroupsRepository
 import com.nekobitlz.unsubscribe.data.models.Group
 
 class GroupsViewModel(
-    private val groupsRepository: IGroupsRepository = GroupsRepository()
+    private val groupsRepository: IGroupsRepository
 ) : ViewModel() {
 
-    private val groupList: MutableLiveData<List<Group>> by lazy {
-        groupsRepository.getGroupList() as MutableLiveData<List<Group>>
-    }
+    private var groupList: LiveData<List<Group>> = groupsRepository.getGroupList()
 
     private val isLongTapMode: MutableLiveData<Boolean> by lazy {
         MutableLiveData<Boolean>().apply { value = false }
     }
 
+    lateinit var unsubscribeStatus: LiveData<Pair<Int, String>>
+
     fun isLongTapMode(): LiveData<Boolean> = isLongTapMode
-    fun getGroupList(): LiveData<List<Group>> = groupList
+    fun getGroupList(): LiveData<List<Group>> {
+        val newList = groupsRepository.getGroupList() as MutableLiveData
+        newList.value = groupList.value
+        groupList = newList
+        return groupList
+    }
 
     fun onLongClicked() {
         val isLongTap = isLongTapMode.value
@@ -30,5 +35,11 @@ class GroupsViewModel(
         }
 
         isLongTapMode.value = !isLongTapMode.value!!
+    }
+
+    fun onUnsubscribeClicked() {
+        val checkedGroup = groupList.value?.filter { it.isChecked }
+        unsubscribeStatus = groupsRepository.unsubscribe(checkedGroup!!)
+        onLongClicked()
     }
 }
