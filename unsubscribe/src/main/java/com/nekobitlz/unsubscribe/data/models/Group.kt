@@ -19,9 +19,9 @@ data class Group(
     var isChecked: Boolean = false
 ) : Serializable {
     fun getFollowers(resources: Resources): String {
-        val subscribersText = "${subscribers.toShortType()} ${resources.getString(R.string.subscribers)}"
+        val subscribersText = "${subscribers.toShortType()} ${resources.getString(R.string.group_info_subscribers)}"
         val friendsText = if (friends > 0) {
-            " · $friends ${resources.getString(R.string.friends)}"
+            " · $friends ${resources.getString(R.string.group_info_friends)}"
         } else {
             ""
         }
@@ -30,7 +30,7 @@ data class Group(
     }
 
     fun getLastPost(resources: Resources): String {
-        return "${resources.getString(R.string.last_post)} ${lastPost.toHumanReadable(resources)}"
+        return "${resources.getString(R.string.group_info_last_post)} ${lastPost.toHumanReadable(resources)}"
     }
 
     companion object CREATOR {
