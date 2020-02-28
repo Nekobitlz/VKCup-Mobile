@@ -1,6 +1,5 @@
 package com.nekobitlz.unsubscribe.features.groups
 
-import android.graphics.Color.TRANSPARENT
 import android.view.LayoutInflater
 import android.view.View
 import android.view.View.GONE
@@ -20,7 +19,7 @@ import kotlin.math.roundToInt
 class GroupsAdapter(private val onClick: (Group, ClickType) -> Unit) :
     ListAdapter<Group, GroupsAdapter.GroupsViewHolder>(GroupsDiffUtil) {
 
-    var isLongTapMode = false
+    var isSelectionMode = false
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GroupsViewHolder {
         val itemView = LayoutInflater
@@ -57,19 +56,13 @@ class GroupsAdapter(private val onClick: (Group, ClickType) -> Unit) :
                 setCheckedVisibility(group, this)
 
                 setOnClickListener {
-                    if (isLongTapMode) {
-                        group.isChecked = !group.isChecked
-                        setCheckedVisibility(group, it)
-                    } else {
-                        onClick(group, ClickType.SHORT)
-                    }
+                    group.isChecked = !group.isChecked
+                    setCheckedVisibility(group, it)
+                    onClick(group, ClickType.SHORT)
                 }
 
                 setOnLongClickListener setOnLongListener@{
-                    group.isChecked = !group.isChecked
-                    setCheckedVisibility(group, it)
-
-                    onClick(group, ClickType.LONG)
+                                       onClick(group, ClickType.LONG)
 
                     return@setOnLongListener true
                 }
@@ -83,7 +76,6 @@ class GroupsAdapter(private val onClick: (Group, ClickType) -> Unit) :
             } else {
                 view.iv_checked.visibility = GONE
                 view.iv_group_image.setBorderColor(R.color.colorTransparent)
-                view.iv_group_image.setBorderWidth(view.resources.getDimension(R.dimen.circle_border_size_2))
             }
         }
 

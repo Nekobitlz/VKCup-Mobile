@@ -14,7 +14,6 @@ import com.nekobitlz.unsubscribe.data.models.Group
 import com.nekobitlz.unsubscribe.di.injector
 import com.nekobitlz.unsubscribe.features.groupinfo.GroupInfoFragment
 import com.nekobitlz.unsubscribe.features.groups.di.GroupsComponent
-import com.nekobitlz.unsubscribe.features.groups.di.GroupsModule
 import kotlinx.android.synthetic.main.fragment_groups.*
 
 class GroupsFragment : Fragment(), GroupsComponent by injector.groupsComponent {
@@ -28,10 +27,10 @@ class GroupsFragment : Fragment(), GroupsComponent by injector.groupsComponent {
     private var onClick: (Group, ClickType) -> Unit = { group, clickType ->
         when (clickType) {
             ClickType.SHORT -> {
-                showGroupInfoDialog(group)
+                viewModel.onShortClicked(group)
             }
             ClickType.LONG -> {
-                viewModel.onLongClicked()
+                showGroupInfoDialog(group)
             }
         }
     }
@@ -61,6 +60,21 @@ class GroupsFragment : Fragment(), GroupsComponent by injector.groupsComponent {
         }
     }
 
+    private fun initViewModel() {
+        viewModel = ViewModelProvider(this, groupsViewModelFactory)
+            .get(GroupsViewModel::class.java)
+
+        observeGroupList()
+        observeSelectionMode()
+        observeSelectionCount()
+    }
+
+    private fun observeSelectionCount() {
+        viewModel.getSelectionCount().observe(viewLifecycleOwner, Observer {
+            btn_unsubscribe.text = "${resources.getString(R.string.group_button_unsubscribe_text)} $it"
+        })
+    }
+
     private fun observeUnsubscribeStatus() {
         viewModel.unsubscribeStatus.observe(viewLifecycleOwner, Observer {
             if (it.first > 0) {
@@ -73,29 +87,15 @@ class GroupsFragment : Fragment(), GroupsComponent by injector.groupsComponent {
         })
     }
 
-    private fun showToast(it: Pair<Int, String>, textId: Int) {
-        Toast.makeText(
-            requireContext(), "${resources.getString(textId)} ${it.second}", Toast.LENGTH_SHORT
-        ).show()
-    }
-
-    private fun initViewModel() {
-        viewModel = ViewModelProvider(this, groupsViewModelFactory)
-            .get(GroupsViewModel::class.java)
-
-        observeGroupList()
-        observeLongTapMode()
-    }
-
     private fun observeGroupList() {
         viewModel.getGroupList().observe(viewLifecycleOwner, Observer {
             adapter.submitList(it)
         })
     }
 
-    private fun observeLongTapMode() {
-        viewModel.isLongTapMode().observe(viewLifecycleOwner, Observer {
-            adapter.isLongTapMode = it
+    private fun observeSelectionMode() {
+        viewModel.isSelectionMode().observe(viewLifecycleOwner, Observer {
+            adapter.isSelectionMode = it
             adapter.notifyDataSetChanged()
 
             if (it) {
@@ -106,6 +106,12 @@ class GroupsFragment : Fragment(), GroupsComponent by injector.groupsComponent {
                 btn_unsubscribe.visibility = View.GONE
             }
         })
+    }
+
+    private fun showToast(it: Pair<Int, String>, textId: Int) {
+        Toast.makeText(
+            requireContext(), "${resources.getString(textId)} ${it.second}", Toast.LENGTH_SHORT
+        ).show()
     }
 
     private fun showGroupInfoDialog(group: Group) {
