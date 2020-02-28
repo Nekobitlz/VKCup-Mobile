@@ -16,7 +16,7 @@ fun Long.toHumanReadable(resources: Resources): String {
             " HH:mm",
             dateTime
         )
-        currentTime[Calendar.DATE] == dateTime[Calendar.DATE] - 1 -> resources.getString(R.string.date_yesterday)
+        currentTime[Calendar.DATE] - 1 == dateTime[Calendar.DATE] -> resources.getString(R.string.date_yesterday)
         currentTime[Calendar.YEAR] == dateTime[Calendar.YEAR] -> DateFormat.format(
             "d MMM",
             dateTime
