@@ -1,6 +1,9 @@
 package com.nekobitlz.documentslist.utils
 
+import android.content.res.Resources
 import android.text.format.DateFormat
+import android.text.format.DateUtils
+import com.nekobitlz.documentslist.R
 import java.util.*
 
 fun Long.toHumanReadableSize(): String {
@@ -25,22 +28,21 @@ fun Long.toHumanReadableSize(): String {
     }
 }
 
-fun Long.toHumanReadableDate(): String {
+fun Long.toHumanReadableDate(resources: Resources): String {
     val dateTime = Calendar.getInstance()
     dateTime.timeInMillis = this * 1000
     val currentTime = Calendar.getInstance()
 
     return when {
-        currentTime[Calendar.DATE] == dateTime[Calendar.DATE] -> "today" + DateFormat.format(
+        DateUtils.isToday(this) -> resources.getString(R.string.date_today) + DateFormat.format(
             " HH:mm",
             dateTime
         )
-        currentTime[Calendar.DATE] == dateTime[Calendar.DATE] - 1 -> "yesterday"
+        DateUtils.isToday(this - DateUtils.DAY_IN_MILLIS) -> resources.getString(R.string.date_yesterday)
         currentTime[Calendar.YEAR] == dateTime[Calendar.YEAR] -> DateFormat.format(
             "d MMM",
             dateTime
         ).toString()
         else -> DateFormat.format("d MMM yyyy", dateTime).toString()
     }
-
 }

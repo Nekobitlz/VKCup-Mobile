@@ -1,5 +1,6 @@
 package com.nekobitlz.documentslist.data.models
 
+import android.content.res.Resources
 import com.nekobitlz.documentslist.utils.toStringList
 import com.nekobitlz.documentslist.utils.toHumanReadableDate
 import com.nekobitlz.documentslist.utils.toHumanReadableSize
@@ -17,8 +18,8 @@ data class VKDocument(
     val type: Int,
     val tags: String
 ) : Serializable {
-    fun getParameters(): String {
-        return "${ext.toUpperCase()} · ${size.toHumanReadableSize()} · ${date.toHumanReadableDate()}".trim()
+    fun getParameters(resources: Resources): String {
+        return "${ext.toUpperCase()} · ${size.toHumanReadableSize()} · ${date.toHumanReadableDate(resources)}".trim()
     }
 
     fun getType(): VkDocumentType =

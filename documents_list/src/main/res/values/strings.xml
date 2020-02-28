@@ -14,4 +14,8 @@
     <string name="dialog_rename_message">Enter new name</string>
     <string name="dialog_rename_confirm">Confirm</string>
     <string name="dialog_rename_success">Successfully renamed!</string>
+
+    <string name="login_failed">Login Failed</string>
+    <string name="date_today">today</string>
+    <string name="date_yesterday">yesterday</string>
 </resources>

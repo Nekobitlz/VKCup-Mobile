@@ -51,7 +51,7 @@ class DocumentsViewHolder(itemView: View, private val onClick: (VKDocument, Clic
                 onClick(document, ClickType.OPEN)
             }
             tv_filename.text = document.title
-            tv_parameters.text = document.getParameters()
+            tv_parameters.text = document.getParameters(resources)
             iv_placeholder.clipToOutline = true
 
             if (document.tags.isBlank()) {

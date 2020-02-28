@@ -14,4 +14,8 @@
     <string name="dialog_rename_message">Введите новое имя</string>
     <string name="dialog_rename_confirm">Подтвердить</string>
     <string name="dialog_rename_success">Успешно переименовано!</string>
+
+    <string name="login_failed">Не удалось авторизироваться</string>
+    <string name="date_today">сегодня</string>
+    <string name="date_yesterday">вчера</string>
 </resources>

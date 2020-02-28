@@ -31,7 +31,7 @@ class DocumentsActivity : AppCompatActivity() {
             }
 
             override fun onLoginFailed(errorCode: Int) {
-                Toast.makeText(baseContext, "Login Failed", Toast.LENGTH_LONG).show()
+                Toast.makeText(baseContext, resources.getString(R.string.login_failed), Toast.LENGTH_LONG).show()
                 finish()
             }
         }
