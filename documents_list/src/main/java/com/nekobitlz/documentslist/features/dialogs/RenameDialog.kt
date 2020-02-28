@@ -4,11 +4,10 @@ import android.app.AlertDialog
 import android.app.Dialog
 import android.content.Context
 import android.os.Bundle
-import android.widget.EditText
-import android.widget.LinearLayout
 import androidx.fragment.app.DialogFragment
 import com.nekobitlz.documentslist.R
 import com.nekobitlz.documentslist.data.models.VKDocument
+import kotlinx.android.synthetic.main.dialog_rename.view.*
 
 class RenameDialog : DialogFragment() {
 
@@ -25,20 +24,15 @@ class RenameDialog : DialogFragment() {
     }
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
-        val input = EditText(requireContext())
-        input.layoutParams = LinearLayout.LayoutParams(
-            LinearLayout.LayoutParams.MATCH_PARENT,
-            LinearLayout.LayoutParams.MATCH_PARENT
-        )
-
+        val layout = requireActivity().layoutInflater.inflate(R.layout.dialog_rename, null)
         val item = requireArguments().getSerializable(DOCUMENT_KEY) as VKDocument
 
         return AlertDialog
             .Builder(requireContext())
             .setMessage(resources.getString(R.string.dialog_rename_message))
-            .setView(input)
+            .setView(layout)
             .setPositiveButton(R.string.dialog_rename_confirm) { _, _ ->
-                listener.onRenameClicked(item, input.text.toString())
+                listener.onRenameClicked(item, layout.et_new_name.text.toString())
             }
             .setNegativeButton(R.string.dialog_cancel) { dialogInterface, _ ->
                 dialogInterface.cancel()
