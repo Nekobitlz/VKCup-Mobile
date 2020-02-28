@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">unsubscribe</string>
+    <string name="app_name">Groups</string>
     <string name="groups_hint_title">Unsubscribe from communities</string>
     <string name="groups_hint_subtitle">Touch and hold to see community information.</string>
     <string name="group_button_open_text">Open</string>

@@ -16,7 +16,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/spacing_huge_32"
-            android:layout_marginTop="?attr/actionBarSize"
+            android:layout_marginTop="@dimen/spacing_huge_32"
             android:layout_marginEnd="@dimen/spacing_huge_32"
             android:gravity="center"
             android:text="@string/groups_hint_title"
