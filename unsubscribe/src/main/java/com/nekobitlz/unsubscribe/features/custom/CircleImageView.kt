@@ -23,8 +23,9 @@ open class CircleImageView @JvmOverloads constructor(
         private const val DEFAULT_BORDER_WIDTH_DP = 2f
     }
 
+    private val defaultBorderWidth = context.resources.getDimension(R.dimen.circle_border_size_2)
     private var borderColor = DEFAULT_BORDER_COLOR
-    private var borderWidth = (context as Activity).convertDpToPx(DEFAULT_BORDER_WIDTH_DP)
+    private var borderWidth = (context as Activity).convertDpToPx(defaultBorderWidth)
 
     private val paint = Paint(Paint.ANTI_ALIAS_FLAG)
     private val clipPath = Path()
