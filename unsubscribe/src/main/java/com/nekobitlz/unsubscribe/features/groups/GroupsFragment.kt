@@ -120,7 +120,6 @@ class GroupsFragment : Fragment(), GroupsComponent by injector.groupsComponent {
     }
 
     companion object {
-        private const val LONG_TAP_MODE = "LONG_TAP_MODE"
         private const val GROUP_INFO_TAG = "GROUP_INFO_TAG"
     }
 }
