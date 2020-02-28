@@ -46,8 +46,6 @@ class GroupInfoFragment : BottomSheetDialogFragment() {
 
     private fun initViews() {
         tv_title.text = group.name
-        // tv_followers.text = group.getFollowers(resources)
-        // tv_last_post.text = group.getLastPost(resources)
 
         if (group.description.isBlank()) {
             tv_description.text = resources.getString(R.string.group_no_description)

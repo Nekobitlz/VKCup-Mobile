@@ -12,9 +12,11 @@
     <dimen name="spacing_normal_12">12dp</dimen>
     <dimen name="spacing_small_8">8dp</dimen>
     <dimen name="spacing_tiny_4">4dp</dimen>
+
     <dimen name="group_image_size_101">101dp</dimen>
     <dimen name="dialog_dismiss_btn_size_24">24dp</dimen>
     <dimen name="button_shape_radius_8">8dp</dimen>
     <dimen name="bottom_sheet_radius_12">12dp</dimen>
+    <dimen name="circle_border_size_2">2dp</dimen>
 
 </resources>

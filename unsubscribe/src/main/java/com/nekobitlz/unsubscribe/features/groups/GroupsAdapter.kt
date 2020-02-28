@@ -1,5 +1,6 @@
 package com.nekobitlz.unsubscribe.features.groups
 
+import android.graphics.Color.TRANSPARENT
 import android.view.LayoutInflater
 import android.view.View
 import android.view.View.GONE
@@ -78,8 +79,11 @@ class GroupsAdapter(private val onClick: (Group, ClickType) -> Unit) :
         private fun setCheckedVisibility(group: Group, view: View) {
             if (group.isChecked) {
                 view.iv_checked.visibility = VISIBLE
+                view.iv_group_image.setBorderColor(R.color.colorChecked)
             } else {
                 view.iv_checked.visibility = GONE
+                view.iv_group_image.setBorderColor(R.color.colorTransparent)
+                view.iv_group_image.setBorderWidth(view.resources.getDimension(R.dimen.circle_border_size_2))
             }
         }
 

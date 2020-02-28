@@ -2,12 +2,14 @@
 <resources>
     <color name="colorBlack">#000</color>
     <color name="colorWhite">#FFF</color>
+    <color name="colorTransparent">@android:color/transparent</color>
 
     <color name="colorGrey">#99A2AD</color>
     <color name="colorGreyWhite">#F2F3F5</color>
     <color name="colorGreyLight">#E1E3E6</color>
     <color name="colorGreyDark">#818C99</color>
     <color name="colorBlue">#4986CC</color>
+    <color name="colorBlueDark">#3F8AE0</color>
 
     <color name="colorPrimary">@color/colorWhite</color>
     <color name="colorPrimaryDark">@color/colorGreyDark</color>
@@ -17,7 +19,9 @@
     <color name="colorSecondaryText">@color/colorGreyDark</color>
     <color name="colorButton">@color/colorBlue</color>
     <color name="colorButtonText">@color/colorWhite</color>
+
     <color name="colorEditTextBackground">@color/colorGreyWhite</color>
     <color name="colorBottomSheetBackground">@color/colorWhite</color>
+    <color name="colorChecked">@color/colorBlueDark</color>
 
 </resources>
