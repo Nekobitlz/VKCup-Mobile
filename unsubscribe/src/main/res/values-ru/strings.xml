@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">Сообщества</string>
+    <string name="login_failed">Не удалось авторизироваться</string>
     <string name="groups_hint_title">Отписаться от сообществ</string>
     <string name="groups_hint_subtitle">Коснитесь и удерживайте, чтобы увидеть информацию о сообществе</string>
     <string name="group_button_open_text">Открыть</string>

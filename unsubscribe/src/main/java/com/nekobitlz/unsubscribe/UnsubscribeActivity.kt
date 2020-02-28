@@ -17,7 +17,9 @@ class UnsubscribeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_unsubscribe)
 
-        checkLoginState()
+        if (savedInstanceState == null) {
+            checkLoginState()
+        }
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -28,7 +30,7 @@ class UnsubscribeActivity : AppCompatActivity() {
             }
 
             override fun onLoginFailed(errorCode: Int) {
-                Toast.makeText(baseContext, "Login Failed", Toast.LENGTH_LONG).show()
+                Toast.makeText(baseContext, resources.getString(R.string.login_failed), Toast.LENGTH_LONG).show()
                 finish()
             }
         }

@@ -13,4 +13,5 @@
     <string name="date_not_yet_created">not yet created</string>
     <string name="date_today">today</string>
     <string name="date_yesterday">yesterday</string>
+    <string name="login_failed">Login Failed</string>
 </resources>
