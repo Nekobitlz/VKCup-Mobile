@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/iv_product_avatar"
+        android:layout_width="@dimen/item_product_image_size_158"
+        android:layout_height="@dimen/item_product_image_size_158"
+        android:background="@drawable/rounded_image"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toTopOf="@+id/tv_product_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/testimage" />
+
+    <TextView
+        android:id="@+id/tv_product_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_small_8"
+        android:textColor="@color/colorSecondaryText"
+        android:textSize="@dimen/font_small_13"
+        app:layout_constraintBottom_toTopOf="@+id/tv_product_price"
+        app:layout_constraintEnd_toEndOf="@id/iv_product_avatar"
+        app:layout_constraintStart_toStartOf="@id/iv_product_avatar"
+        app:layout_constraintTop_toBottomOf="@id/iv_product_avatar"
+        tools:text="Pullower Hoodie" />
+
+    <TextView
+        android:id="@+id/tv_product_price"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorPrimaryText"
+        android:textSize="@dimen/font_average_14"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/tv_product_name"
+        app:layout_constraintStart_toStartOf="@id/tv_product_name"
+        app:layout_constraintTop_toBottomOf="@id/tv_product_name"
+        tools:text="4 230 Р" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
