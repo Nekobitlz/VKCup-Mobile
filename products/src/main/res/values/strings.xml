@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Products</string>
+    <string name="btn_add_to_favourite">Add to favourite</string>
+    <string name="shop_status_open">Open group</string>
+    <string name="shop_status_closed">Сlosed group</string>
+    <string name="shop_status_private">Private group</string>
+    <string name="login_failed">Login Failed</string>
 </resources>
