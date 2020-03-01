@@ -1,6 +1,7 @@
 package com.nekobitlz.products.data.models
 
 import org.json.JSONObject
+import java.io.Serializable
 
 data class Product(
     val id: Int,
@@ -8,9 +9,8 @@ data class Product(
     val price: String,
     val description: String,
     val avatar: String,
-    val isFavourite: Boolean = false
-) {
-  //  fun getPrice(): String = price.toString().formatMoney()
+    var isFavourite: Boolean = false
+) : Serializable {
 
     companion object CREATOR {
 
