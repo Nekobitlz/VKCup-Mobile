@@ -3,7 +3,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorBottomSheetBackground"
     android:orientation="vertical">
+
+    <Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:elevation="3dp"
+        android:navigationIcon="@drawable/ic_cancel_outline_28"
+        style="@style/ToolbarStyle"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_cities"

@@ -15,6 +15,12 @@
     <color name="colorPrimaryText">@color/colorBlack</color>
     <color name="colorSecondaryText">@color/colorGreyDark</color>
 
+    <!-- Toolbar colors -->
+    <color name="toolbarBackground">@color/colorWhite</color>
+    <color name="toolbarTextColor">@color/colorGrey</color>
+    <color name="toolbarTextColorPrimary">@color/colorGreyDark</color>
+    <color name="toolbarTextColorSecondary">@color/colorGreyLight</color>
+
     <color name="colorButton">@color/colorBlue</color>
     <color name="colorButtonText">@color/colorWhite</color>
     <color name="colorBottomSheetBackground">@color/colorWhite</color>

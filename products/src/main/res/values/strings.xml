@@ -5,4 +5,6 @@
     <string name="shop_status_closed">Сlosed group</string>
     <string name="shop_status_private">Private group</string>
     <string name="login_failed">Login Failed</string>
+    <string name="shops_toolbar_title">Shops in</string>
+    <string name="shops_toolbar_country_name">Russia</string>
 </resources>
