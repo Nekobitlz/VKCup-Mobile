@@ -10,20 +10,18 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.nekobitlz.products.R
+import com.nekobitlz.products.di.injector
+import com.nekobitlz.products.features.cities.di.CityComponent
 import com.nekobitlz.products.features.listeners.OnCheckedListener
 import kotlinx.android.synthetic.main.fragment_cities.*
 
-class CityFragment : Fragment() {
+class CityFragment : Fragment(), CityComponent by injector.cityComponent {
 
     private val adapter: CityAdapter by lazy {
         CityAdapter(listener)
     }
 
     private lateinit var viewModel: CityViewModel
-
-    private val cityViewModelFactory by lazy {
-        CityViewModelFactory()
-    }
 
     private lateinit var listener: OnCheckedListener
 
@@ -33,7 +31,7 @@ class CityFragment : Fragment() {
         try {
             listener = targetFragment as OnCheckedListener
         } catch (e: ClassCastException) {
-            throw ClassCastException(parentFragment.toString() + " must implement DialogEventListener")
+            throw ClassCastException(parentFragment.toString() + " must implement OnCheckedListener")
         }
     }
 
@@ -56,6 +54,7 @@ class CityFragment : Fragment() {
         requireActivity().actionBar?.setDisplayHomeAsUpEnabled(true)
         requireActivity().actionBar?.setDisplayShowHomeEnabled(true)
         toolbar.setNavigationOnClickListener { requireActivity().supportFragmentManager.popBackStack() }
+        toolbar.title = resources.getString(R.string.city_title)
     }
 
     private fun initViewModel() {
