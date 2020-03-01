@@ -1,6 +1,5 @@
 package com.nekobitlz.products.data.repository
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.nekobitlz.products.data.models.City
@@ -31,12 +30,10 @@ class ShopsRepository : IShopsRepository {
 
         VK.execute(request, object : VKApiCallback<List<Shop>> {
             override fun success(result: List<Shop>) {
-                Log.e("VK", "success ${result.size}")
                 data.value = result
             }
 
             override fun fail(error: Exception) {
-                Log.e("VK", "error ${error.message}")
                 error.printStackTrace()
             }
         })
