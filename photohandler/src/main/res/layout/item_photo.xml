@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ImageView
+        android:id="@+id/iv_photo"
+        android:layout_width="@dimen/item_photo_size_118"
+        android:layout_height="@dimen/item_photo_size_118"
+        android:layout_marginEnd="@dimen/spacing_little_2"
+        android:layout_marginBottom="@dimen/spacing_little_2"
+        android:scaleType="centerCrop"
+        tools:src="@drawable/testdog" />
+
+</FrameLayout>

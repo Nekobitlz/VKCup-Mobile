@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">PhotoHandler</string>
+    <string name="album_photo_count">photo</string>
+    <string name="login_failed">Login failed</string>
 </resources>

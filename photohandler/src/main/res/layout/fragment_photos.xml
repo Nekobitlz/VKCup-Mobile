@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize" />
+
+    <TextView
+        android:id="@+id/tv_photos_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_large_16"
+        android:layout_marginTop="@dimen/spacing_normal_12"
+        android:layout_marginEnd="@dimen/spacing_large_16"
+        android:layout_marginBottom="@dimen/spacing_normal_12"
+        android:textColor="@color/colorPrimaryText"
+        android:textSize="@dimen/font_large_20"
+        android:textStyle="bold"
+        tools:text="Noize MC" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_photos"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/spacing_little_2"
+        android:layout_marginTop="@dimen/spacing_small_8"
+        android:layout_weight="1"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:spanCount="3"
+        tools:listitem="@layout/item_photo" />
+
+</LinearLayout>
