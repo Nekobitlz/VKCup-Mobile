@@ -13,6 +13,7 @@ import com.nekobitlz.products.data.models.City
 import com.nekobitlz.products.data.models.Shop
 import com.nekobitlz.products.features.cities.CityFragment
 import com.nekobitlz.products.features.listeners.OnCheckedListener
+import com.nekobitlz.products.features.products.ProductsFragment
 import kotlinx.android.synthetic.main.fragment_shops.*
 
 class ShopsFragment : Fragment(), OnCheckedListener {
@@ -30,7 +31,7 @@ class ShopsFragment : Fragment(), OnCheckedListener {
     }
 
     private val onClick: (Shop) -> Unit = {
-        //TODO()
+        openProductsFragment(it)
     }
 
     override fun onChecked(city: City) {
@@ -101,6 +102,15 @@ class ShopsFragment : Fragment(), OnCheckedListener {
         viewModel.getShops().observe(viewLifecycleOwner, Observer {
             adapter.submitList(it)
         })
+    }
+
+    private fun openProductsFragment(shop: Shop) {
+        requireActivity()
+            .supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.container, ProductsFragment.getInstance(shop.id))
+            .addToBackStack(null)
+            .commit()
     }
 
     companion object {
