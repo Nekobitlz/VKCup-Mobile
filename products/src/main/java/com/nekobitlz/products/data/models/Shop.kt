@@ -20,7 +20,7 @@ data class Shop(
     companion object CREATOR {
 
         fun parse(json: JSONObject) = Shop(
-            id = json.optInt("it", 0),
+            id = json.optInt("id", 0),
             name = json.optString("name", ""),
             avatar = json.optString("photo_200", ""),
             status = json.optInt("is_closed", 0)
