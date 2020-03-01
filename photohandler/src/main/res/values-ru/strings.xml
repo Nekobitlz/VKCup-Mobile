@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Альбомы</string>
+    <string name="album_photo_count">фотографий</string>
+    <string name="login_failed">Не удалось авторизироваться</string>
+    <string name="toast_error_no_photo">Вы должны выбрать фото!</string>
+    <string name="toast_success">Успешно!</string>
+    <string name="toast_error">Возникла ошибка</string>
+    <string name="editable_mode">Редактирование</string>
+</resources>

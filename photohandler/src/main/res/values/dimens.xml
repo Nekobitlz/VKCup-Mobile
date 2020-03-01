@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Font sizes -->
+    <dimen name="font_large_20">20sp</dimen>
+    <dimen name="font_normal_16">16sp</dimen>
+    <dimen name="font_average_14">14sp</dimen>
+    <dimen name="font_small_13">13sp</dimen>
+
+    <!-- Typical spacing between two views -->
+    <dimen name="spacing_large_16">16dp</dimen>
+    <dimen name="spacing_medium_14">14dp</dimen>
+    <dimen name="spacing_normal_12">12dp</dimen>
+    <dimen name="spacing_small_8">8dp</dimen>
+    <dimen name="spacing_tiny_6">6dp</dimen>
+
+    <dimen name="button_shape_radius_8">8dp</dimen>
+    <dimen name="album_photo_size_158">158dp</dimen>
+    <dimen name="item_album_height_226">226dp</dimen>
+    <dimen name="item_photo_size_118">118dp</dimen>
+    <dimen name="spacing_little_2">2dp</dimen>
+
+</resources>
