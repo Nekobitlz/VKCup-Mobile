@@ -6,8 +6,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.DialogFragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import com.google.android.material.bottomsheet.BottomSheetBehavior
+import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.nekobitlz.unsubscribe.R
 import com.nekobitlz.unsubscribe.data.models.Group
@@ -25,11 +28,21 @@ class GroupInfoFragment : BottomSheetDialogFragment() {
         component.groupInfoViewModelFactory
     }
 
+    private val bottomBehavior
+        get() = (dialog as? BottomSheetDialog)?.behavior
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        setStyle(DialogFragment.STYLE_NORMAL, R.style.BottomSheetDialogTheme)
+
         group = requireArguments().getSerializable(GROUP_TAG) as Group
         component = injector.getGroupInfoModule(group)
+    }
+
+    override fun onStart() {
+        super.onStart()
+        bottomBehavior?.state = BottomSheetBehavior.STATE_EXPANDED
     }
 
     override fun onCreateView(
