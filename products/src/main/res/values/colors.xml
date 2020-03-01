@@ -6,6 +6,7 @@
     <color name="colorGreyWhite">#F9F9F9</color>
     <color name="colorGreyLight">#AEB7C2</color>
     <color name="colorGreyDark">#818C99</color>
+    <color name="colorGreyTransparent">#001C3D</color>
     <color name="colorBlue">#3F8AE0</color>
 
     <color name="colorPrimary">@color/colorWhite</color>
@@ -23,6 +24,10 @@
 
     <color name="colorButton">@color/colorBlue</color>
     <color name="colorButtonText">@color/colorWhite</color>
+
+    <color name="colorButtonFavourite">@color/colorGreyTransparent</color>
+    <color name="colorButtonFavouriteText">@color/colorBlue</color>
+
     <color name="colorBottomSheetBackground">@color/colorWhite</color>
     <color name="colorAvatarBackground">@color/colorWhite</color>
     <color name="colorProductBackground">@color/colorGreyWhite</color>

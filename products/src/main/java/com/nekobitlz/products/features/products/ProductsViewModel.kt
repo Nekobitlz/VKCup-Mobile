@@ -10,6 +10,7 @@ class ProductsViewModel(private val groupId: Int, private val repository: IProdu
     ViewModel() {
 
     private var products = repository.getProducts(groupId)
+    lateinit var isFavourite: LiveData<Boolean>
 
     fun getProducts(): LiveData<List<Product>> {
         val newProducts = repository.getProducts(groupId) as MutableLiveData
@@ -17,6 +18,13 @@ class ProductsViewModel(private val groupId: Int, private val repository: IProdu
         products = newProducts
 
         return products
+    }
 
+    fun addToFavourite(product: Product) {
+        isFavourite = repository.addToFavourite(groupId, product.id)
+    }
+
+    fun removeFromFavourite(product: Product) {
+        isFavourite = repository.removeFromFavourite(groupId, product.id)
     }
 }
