@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Groups</string>
+    <string name="groups_hint_title">Unsubscribe from communities</string>
+    <string name="groups_hint_subtitle">Touch and hold to see community information.</string>
+    <string name="group_button_open_text">Open</string>
+    <string name="group_info_subscribers">subscribers</string>
+    <string name="group_info_friends">friends</string>
+    <string name="group_info_last_post">Last post</string>
+    <string name="group_button_unsubscribe_text">Unsubscribe</string>
+    <string name="group_no_description">No description</string>
+    <string name="group_unsubscribe_success">Successfully unsubscribed from</string>
+    <string name="group_unsubscribe_error">Failed to unsubscribe from</string>
+    <string name="date_not_yet_created">not yet created</string>
+    <string name="date_today">today</string>
+    <string name="date_yesterday">yesterday</string>
+    <string name="login_failed">Login Failed</string>
+</resources>

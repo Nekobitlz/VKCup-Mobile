@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Сообщества</string>
+    <string name="login_failed">Не удалось авторизироваться</string>
+    <string name="groups_hint_title">Отписаться от сообществ</string>
+    <string name="groups_hint_subtitle">Коснитесь и удерживайте, чтобы увидеть информацию о сообществе</string>
+    <string name="group_button_open_text">Открыть</string>
+    <string name="group_info_subscribers">подписчиков</string>
+    <string name="group_info_friends">друзей</string>
+    <string name="group_info_last_post">Последняя запись</string>
+    <string name="group_button_unsubscribe_text">Отписаться</string>
+    <string name="group_no_description">Описание отсутствует</string>
+    <string name="group_unsubscribe_success">Вы успешно отписались от</string>
+    <string name="group_unsubscribe_error">Произошла ошибка при отписке от</string>
+    <string name="date_not_yet_created">ещё не создана</string>
+    <string name="date_today">сегодня</string>
+    <string name="date_yesterday">вчера</string>
+</resources>
