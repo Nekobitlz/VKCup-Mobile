@@ -10,7 +10,7 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?actionBarSize"
-        android:navigationIcon="@drawable/ic_back_outline_28">
+        android:navigationIcon="@drawable/bitmap_ic_back">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -22,7 +22,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/spacing_medium_14"
-                android:src="@drawable/ic_add_outline_28"
+                android:src="@drawable/bitmap_ic_add"
                 android:background="@android:color/transparent" />
 
         </LinearLayout>

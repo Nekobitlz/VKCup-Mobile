@@ -17,7 +17,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/spacing_medium_14"
             android:background="@android:color/transparent"
-            android:src="@drawable/ic_cancel_outlne_28" />
+            android:src="@drawable/bitmap_ic_cancel" />
 
         <TextView
             android:id="@+id/tv_title"
@@ -39,7 +39,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/spacing_medium_14"
                 android:background="@android:color/transparent"
-                android:src="@drawable/ic_edit_outline_28" />
+                android:src="@drawable/bitmap_ic_edit" />
 
             <ImageButton
                 android:id="@+id/toolbar_btn_add"
@@ -47,7 +47,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/spacing_medium_14"
                 android:background="@android:color/transparent"
-                android:src="@drawable/ic_add_outline_28" />
+                android:src="@drawable/bitmap_ic_add" />
 
         </LinearLayout>
     </Toolbar>
