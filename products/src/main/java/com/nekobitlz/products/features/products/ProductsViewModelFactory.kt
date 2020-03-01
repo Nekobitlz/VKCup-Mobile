@@ -3,11 +3,10 @@ package com.nekobitlz.products.features.products
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.nekobitlz.products.data.repository.IProductsRepository
-import com.nekobitlz.products.data.repository.ProductsRepository
 
 class ProductsViewModelFactory(
     private val groupId: Int,
-    private val repository: IProductsRepository = ProductsRepository()
+    private val repository: IProductsRepository
 ) : ViewModelProvider.Factory {
 
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {

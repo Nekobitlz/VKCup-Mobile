@@ -10,18 +10,24 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import com.nekobitlz.products.R
 import com.nekobitlz.products.data.models.Product
+import com.nekobitlz.products.data.models.Shop
+import com.nekobitlz.products.di.injector
+import com.nekobitlz.products.features.product_info.ProductInfoFragment
+import com.nekobitlz.products.features.products.di.ProductsComponent
 import kotlinx.android.synthetic.main.fragment_products.*
 
 class ProductsFragment : Fragment() {
 
-    private var groupId: Int = 0
+    private lateinit var shop: Shop
 
     private val adapter by lazy {
         ProductsAdapter(onClick)
     }
     private lateinit var viewModel: ProductsViewModel
+    private lateinit var component: ProductsComponent
+
     private val viewModelFactory by lazy {
-        ProductsViewModelFactory(groupId)
+        component.productsViewModelFactory
     }
 
     private val onClick: (Product) -> Unit = {
@@ -30,7 +36,8 @@ class ProductsFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        groupId = requireArguments().getInt(GROUP_ID_TAG)
+        shop = requireArguments().getSerializable(SHOP_TAG) as Shop
+        component = injector.createProductsComponent(shop.id)
     }
 
     override fun onCreateView(
@@ -42,28 +49,48 @@ class ProductsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        initToolbar()
+        initViewModel()
+        initRecyclerView()
+    }
+
+    private fun initToolbar() {
+        requireActivity().setActionBar(toolbar)
+        requireActivity().actionBar?.setDisplayHomeAsUpEnabled(true)
+        requireActivity().actionBar?.setDisplayShowHomeEnabled(true)
+        toolbar.setNavigationOnClickListener { requireActivity().supportFragmentManager.popBackStack() }
+        toolbar.title = "${resources.getString(R.string.shop_products)} ${shop.name}"
+    }
+
+    private fun initViewModel() {
         viewModel = ViewModelProvider(this, viewModelFactory).get(ProductsViewModel::class.java)
         viewModel.getProducts().observe(viewLifecycleOwner, Observer {
             adapter.submitList(it)
         })
+    }
 
+    private fun initRecyclerView() {
         rv_products.layoutManager = GridLayoutManager(requireContext(), 2)
         rv_products.setHasFixedSize(true)
         rv_products.adapter = adapter
     }
 
     private fun openProductInfoFragment(product: Product) {
-        // TODO()
+        requireActivity().supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.container, ProductInfoFragment.newInstance(product))
+            .addToBackStack(null)
+            .commit()
     }
 
     companion object {
 
-        private const val GROUP_ID_TAG = "GROUP_ID_TAG"
+        private const val SHOP_TAG = "SHOP_TAG"
 
-        fun getInstance(groupId: Int): ProductsFragment {
+        fun getInstance(shop: Shop): ProductsFragment {
             val bundle = Bundle()
             val fragment = ProductsFragment()
-            bundle.putInt(GROUP_ID_TAG, groupId)
+            bundle.putSerializable(SHOP_TAG, shop)
             fragment.arguments = bundle
 
             return fragment
