@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:elevation="3dp"
-        android:navigationIcon="@drawable/ic_cancel_outline_28"
+        android:navigationIcon="@drawable/bitmap_ic_cancel"
         style="@style/ToolbarStyle"/>
 
     <androidx.recyclerview.widget.RecyclerView

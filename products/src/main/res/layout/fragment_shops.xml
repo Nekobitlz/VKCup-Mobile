@@ -17,6 +17,12 @@
             android:layout_height="?actionBarSize"
             app:title="@string/shops_toolbar_title">
 
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_tiny_6"
+                android:src="@drawable/bitmap_ic_dropdown" />
+
         </androidx.appcompat.widget.Toolbar>
 
     </com.google.android.material.appbar.AppBarLayout>
