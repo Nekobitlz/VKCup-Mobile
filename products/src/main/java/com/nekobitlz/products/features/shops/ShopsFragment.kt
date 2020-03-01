@@ -11,12 +11,14 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.nekobitlz.products.R
 import com.nekobitlz.products.data.models.City
 import com.nekobitlz.products.data.models.Shop
+import com.nekobitlz.products.di.injector
 import com.nekobitlz.products.features.cities.CityFragment
 import com.nekobitlz.products.features.listeners.OnCheckedListener
 import com.nekobitlz.products.features.products.ProductsFragment
+import com.nekobitlz.products.features.shops.di.ShopsComponent
 import kotlinx.android.synthetic.main.fragment_shops.*
 
-class ShopsFragment : Fragment(), OnCheckedListener {
+class ShopsFragment : Fragment(), OnCheckedListener, ShopsComponent by injector.shopsComponent {
 
     private var toolbarText: String? = null
 
@@ -25,10 +27,6 @@ class ShopsFragment : Fragment(), OnCheckedListener {
     }
 
     private lateinit var viewModel: ShopsViewModel
-
-    private val viewModelFactory: ShopsViewModelFactory by lazy {
-        ShopsViewModelFactory()
-    }
 
     private val onClick: (Shop) -> Unit = {
         openProductsFragment(it)
@@ -94,7 +92,7 @@ class ShopsFragment : Fragment(), OnCheckedListener {
     }
 
     private fun initViewModel() {
-        viewModel = ViewModelProvider(this, viewModelFactory).get(ShopsViewModel::class.java)
+        viewModel = ViewModelProvider(this, shopsViewModelFactory).get(ShopsViewModel::class.java)
         observeShops()
     }
 
@@ -108,7 +106,7 @@ class ShopsFragment : Fragment(), OnCheckedListener {
         requireActivity()
             .supportFragmentManager
             .beginTransaction()
-            .replace(R.id.container, ProductsFragment.getInstance(shop.id))
+            .replace(R.id.container, ProductsFragment.getInstance(shop))
             .addToBackStack(null)
             .commit()
     }

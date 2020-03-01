@@ -6,10 +6,8 @@ import androidx.lifecycle.ViewModel
 import com.nekobitlz.products.data.models.City
 import com.nekobitlz.products.data.models.Shop
 import com.nekobitlz.products.data.repository.IShopsRepository
-import com.nekobitlz.products.data.repository.ShopsRepository
 
-class ShopsViewModel(private val shopsRepository: IShopsRepository = ShopsRepository()) :
-    ViewModel() {
+class ShopsViewModel(private val shopsRepository: IShopsRepository) : ViewModel() {
 
     private var shops: MutableLiveData<List<Shop>> = shopsRepository.getShops() as MutableLiveData
 
