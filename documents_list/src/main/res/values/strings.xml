@@ -1,3 +1,21 @@
 <resources>
-    <string name="app_name">documents_list</string>
+    <string name="app_name">Documents</string>
+    <string name="menu_rename">Rename</string>
+    <string name="menu_delete">Delete document</string>
+
+    <string name="dialog_success">Success!</string>
+    <string name="dialog_cancel">Cancel</string>
+    <string name="dialog_error">An error occurred during execution</string>
+
+    <string name="dialog_delete_message">Are you sure  you want to delete</string>
+    <string name="dialog_delete_confirm">Delete</string>
+    <string name="dialog_delete_success">Successfully deleted!</string>
+
+    <string name="dialog_rename_message">Enter new name</string>
+    <string name="dialog_rename_confirm">Confirm</string>
+    <string name="dialog_rename_success">Successfully renamed!</string>
+
+    <string name="login_failed">Login Failed</string>
+    <string name="date_today">today</string>
+    <string name="date_yesterday">yesterday</string>
 </resources>

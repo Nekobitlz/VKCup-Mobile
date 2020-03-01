@@ -1,2 +1,2 @@
-include ':app', ':documents_list', ':vksharing'
+include ':documents_list', ':unsubscribe', ':photohandler', ':products', ':vksharing'
 rootProject.name='vkcup'

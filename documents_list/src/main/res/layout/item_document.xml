@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="84dp"
+    android:background="@color/itemBackground"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:id="@+id/iv_placeholder"
+        android:layout_width="@dimen/placeholder_size_72"
+        android:layout_height="@dimen/placeholder_size_72"
+        android:layout_marginStart="@dimen/spacing_normal_13"
+        android:layout_marginTop="@dimen/spacing_small_6"
+        android:layout_marginEnd="@dimen/spacing_normal_13"
+        android:layout_marginBottom="@dimen/spacing_small_6"
+        android:background="@drawable/rounded_rectangle"
+        android:src="@drawable/ic_placeholder_document_text_72" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="3"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_filename"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="2"
+            android:textColor="@color/colorPrimaryText"
+            android:textSize="@dimen/font_normal_16"
+            tools:text="password" />
+
+        <TextView
+            android:id="@+id/tv_parameters"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_tiny_3"
+            android:textColor="@color/colorSecondaryText"
+            android:textSize="@dimen/font_small_13"
+            tools:text="TXT · 0 КБ · 18 авг" />
+
+        <TextView
+            android:id="@+id/tv_tags"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_tiny_3"
+            android:drawableStart="@drawable/bitmap_tag"
+            android:drawablePadding="@dimen/spacing_small_6"
+            android:maxLines="1"
+            android:textColor="@color/colorSecondaryText"
+            android:textSize="@dimen/font_small_13"
+            tools:text="биржа, данные, биткоин, парол…" />
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/ib_more"
+        android:layout_width="@dimen/more_button_width_36"
+        android:layout_height="@dimen/more_button_height_48"
+        android:layout_marginStart="@dimen/spacing_tiny_3"
+        android:layout_marginTop="@dimen/spacing_large_18"
+        android:layout_marginEnd="@dimen/spacing_tiny_3"
+        android:layout_marginBottom="@dimen/spacing_large_18"
+        android:background="@color/itemBackground"
+        android:src="@drawable/bitmap_more" />
+
+</LinearLayout>

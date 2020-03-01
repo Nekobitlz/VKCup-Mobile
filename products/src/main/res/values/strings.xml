@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Products</string>
+    <string name="shop_status_open">Open group</string>
+    <string name="shop_status_closed">Сlosed group</string>
+    <string name="shop_status_private">Private group</string>
+    <string name="login_failed">Login Failed</string>
+    <string name="shops_toolbar_title">Shops in</string>
+    <string name="shops_toolbar_country_name">Russia</string>
+    <string name="shop_products">Community products</string>
+    <string name="city_title">City</string>
+    <string name="btn_delete_from_favourites">Delete from favourites</string>
+    <string name="btn_add_to_favourites">Add to favourites</string>
+    <string name="toast_error">An error occured</string>
+</resources>
