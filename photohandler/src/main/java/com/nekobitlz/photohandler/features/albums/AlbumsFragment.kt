@@ -21,12 +21,18 @@ class AlbumsFragment : Fragment() {
         AlbumsAdapter(onClick)
     }
 
-    private val onClick: (Album) -> Unit = {
-        if (!adapter.isEditableMode) {
-            openPhotosFragment(it)
-        } else {
-            viewModel.onRemoveClicked(it)
-            observeResult()
+    private val onClick: (Album, ClickType) -> Unit = { album, type ->
+        when (type) {
+            ClickType.SHORT -> if (adapter.isEditableMode) {
+                viewModel.onRemoveClicked(album)
+                observeResult()
+            } else {
+                openPhotosFragment(album)
+            }
+            ClickType.LONG -> {
+                viewModel.onEditClicked()
+                observeEditableMode()
+            }
         }
     }
 

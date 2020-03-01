@@ -13,7 +13,7 @@ import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.item_album.view.*
 import kotlin.math.roundToInt
 
-class AlbumsAdapter(private val onClick: (Album) -> Unit) :
+class AlbumsAdapter(private val onClick: (Album, ClickType) -> Unit) :
     ListAdapter<Album, AlbumsAdapter.AlbumsViewHolder>(AlbumsDiffUtil) {
 
     var isEditableMode: Boolean = false
@@ -42,7 +42,7 @@ class AlbumsAdapter(private val onClick: (Album) -> Unit) :
 
     inner class AlbumsViewHolder(
         itemView: View,
-        private val onClick: (Album) -> Unit
+        private val onClick: (Album, ClickType) -> Unit
     ) : RecyclerView.ViewHolder(itemView) {
 
         fun bind(album: Album) {
@@ -51,7 +51,12 @@ class AlbumsAdapter(private val onClick: (Album) -> Unit) :
                 tv_album_title.text = album.name
                 tv_album_photo_count.text = album.getPhotoCount(resources)
                 loadImageFromUrl(album.photo, iv_album_photo)
-                setOnClickListener { onClick(album) }
+
+                setOnClickListener { onClick(album, ClickType.SHORT) }
+                setOnLongClickListener {
+                    onClick(album, ClickType.LONG)
+                    true
+                }
 
                 if (isEditableMode) {
                     iv_album_remove.visibility = View.VISIBLE
