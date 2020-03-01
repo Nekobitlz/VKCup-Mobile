@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Продукты</string>
+    <string name="shop_status_open">Открытая группа</string>
+    <string name="shop_status_closed">Закрытая группа</string>
+    <string name="shop_status_private">Частная группа</string>
+    <string name="login_failed">Не удалось авторизироваться</string>
+    <string name="shops_toolbar_title">Магазины в</string>
+    <string name="shops_toolbar_country_name">России</string>
+    <string name="shop_products">Товары сообщества</string>
+    <string name="city_title">Город</string>
+    <string name="btn_delete_from_favourites">Удалить из избранного</string>
+    <string name="btn_add_to_favourites">Добавить в избранное</string>
+    <string name="toast_error">Произошла ошибка</string>
+</resources>
