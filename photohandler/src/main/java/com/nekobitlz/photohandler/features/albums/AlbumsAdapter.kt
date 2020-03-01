@@ -14,7 +14,9 @@ import kotlinx.android.synthetic.main.item_album.view.*
 import kotlin.math.roundToInt
 
 class AlbumsAdapter(private val onClick: (Album) -> Unit) :
-    ListAdapter<Album, AlbumsViewHolder>(AlbumsDiffUtil) {
+    ListAdapter<Album, AlbumsAdapter.AlbumsViewHolder>(AlbumsDiffUtil) {
+
+    var isEditableMode: Boolean = false
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AlbumsViewHolder {
         val itemView = LayoutInflater
@@ -37,33 +39,39 @@ class AlbumsAdapter(private val onClick: (Album) -> Unit) :
             oldItem == newItem
 
     }
-}
 
-class AlbumsViewHolder(
-    itemView: View,
-    private val onClick: (Album) -> Unit
-) : RecyclerView.ViewHolder(itemView) {
+    inner class AlbumsViewHolder(
+        itemView: View,
+        private val onClick: (Album) -> Unit
+    ) : RecyclerView.ViewHolder(itemView) {
 
-    fun bind(album: Album) {
-        itemView.apply {
-            iv_album_photo.clipToOutline = true
-            tv_album_title.text = album.name
-            tv_album_photo_count.text = album.getPhotoCount(resources)
-            loadImageFromUrl(album.photo, iv_album_photo)
-            setOnClickListener { onClick(album) }
+        fun bind(album: Album) {
+            itemView.apply {
+                iv_album_photo.clipToOutline = true
+                tv_album_title.text = album.name
+                tv_album_photo_count.text = album.getPhotoCount(resources)
+                loadImageFromUrl(album.photo, iv_album_photo)
+                setOnClickListener { onClick(album) }
+
+                if (isEditableMode) {
+                    iv_album_remove.visibility = View.VISIBLE
+                } else {
+                    iv_album_remove.visibility = View.GONE
+                }
+            }
         }
-    }
 
-    private fun loadImageFromUrl(url: String, imageView: ImageView) {
-        val size = imageView.resources
-            .getDimension(R.dimen.album_photo_size_158)
-            .roundToInt()
+        private fun loadImageFromUrl(url: String, imageView: ImageView) {
+            val size = imageView.resources
+                .getDimension(R.dimen.album_photo_size_158)
+                .roundToInt()
 
-        Picasso
-            .get()
-            .load(url)
-            .resize(size, size)
-            .centerCrop()
-            .into(imageView)
+            Picasso
+                .get()
+                .load(url)
+                .resize(size, size)
+                .centerCrop()
+                .into(imageView)
+        }
     }
 }
