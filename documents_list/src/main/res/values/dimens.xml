@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Font sizes -->
+    <dimen name="font_normal_16">16sp</dimen>
+    <dimen name="font_small_13">13sp</dimen>
+
+    <!-- Typical spacing between two views -->
+    <dimen name="spacing_large_18">18dp</dimen>
+    <dimen name="spacing_normal_13">13dp</dimen>
+    <dimen name="spacing_small_6">6dp</dimen>
+    <dimen name="spacing_tiny_3">3dp</dimen>
+
+    <!-- Size elements -->
+    <dimen name="placeholder_size_72">72dp</dimen>
+    <dimen name="more_button_width_36">36dp</dimen>
+    <dimen name="more_button_height_48">48dp</dimen>
+    <dimen name="popup_elevation_10">10dp</dimen>
+</resources>
