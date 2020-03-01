@@ -87,7 +87,7 @@ class AlbumsFragment : Fragment() {
                 toolbar.toolbar_btn_add.visibility = View.GONE
                 toolbar.toolbar_btn_edit.visibility = View.GONE
                 toolbar.toolbar_btn_close.visibility = View.VISIBLE
-                toolbar.title = resources.getString(R.string.editable_mode)
+                toolbar.tv_title.text = resources.getString(R.string.editable_mode)
             } else {
                 adapter.isEditableMode = false
                 adapter.notifyDataSetChanged()
@@ -95,7 +95,7 @@ class AlbumsFragment : Fragment() {
                 toolbar.toolbar_btn_add.visibility = View.VISIBLE
                 toolbar.toolbar_btn_edit.visibility = View.VISIBLE
                 toolbar.toolbar_btn_close.visibility = View.GONE
-                toolbar.title = resources.getString(R.string.app_name)
+                toolbar.tv_title.text = resources.getString(R.string.app_name)
             }
         })
     }

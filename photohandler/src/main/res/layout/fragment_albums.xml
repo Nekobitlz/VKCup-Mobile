@@ -19,6 +19,15 @@
             android:background="@android:color/transparent"
             android:src="@drawable/ic_cancel_outlne_28" />
 
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorPrimaryText"
+            android:textSize="@dimen/font_large_20"
+            android:textStyle="bold"
+            tools:text="Альбомы"/>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

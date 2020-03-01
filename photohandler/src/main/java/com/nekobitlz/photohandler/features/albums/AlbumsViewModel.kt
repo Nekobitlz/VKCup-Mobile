@@ -9,7 +9,7 @@ import com.nekobitlz.photohandler.data.repository.IAlbumsRepository
 class AlbumsViewModel(private val repository: IAlbumsRepository) : ViewModel() {
     private var albums: LiveData<List<Album>>
     private val isEditableMode: MutableLiveData<Boolean> by lazy {
-        MutableLiveData<Boolean>()
+        MutableLiveData<Boolean>().apply { value = false }
     }
 
     init {
