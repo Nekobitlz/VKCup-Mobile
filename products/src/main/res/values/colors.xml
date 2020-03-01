@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorBlack">#000</color>
+    <color name="colorWhite">#FFF</color>
+    <color name="colorGrey">#99A2AD</color>
+    <color name="colorGreyWhite">#F9F9F9</color>
+    <color name="colorGreyLight">#AEB7C2</color>
+    <color name="colorGreyDark">#818C99</color>
+    <color name="colorGreyTransparent">#001C3D</color>
+    <color name="colorBlue">#3F8AE0</color>
+
+    <color name="colorPrimary">@color/colorWhite</color>
+    <color name="colorPrimaryDark">@color/colorWhite</color>
+    <color name="colorAccent">@color/colorBlue</color>
+
+    <color name="colorPrimaryText">@color/colorBlack</color>
+    <color name="colorSecondaryText">@color/colorGreyDark</color>
+
+    <!-- Toolbar colors -->
+    <color name="toolbarBackground">@color/colorWhite</color>
+    <color name="toolbarTextColor">@color/colorGrey</color>
+    <color name="toolbarTextColorPrimary">@color/colorGreyDark</color>
+    <color name="toolbarTextColorSecondary">@color/colorGreyLight</color>
+
+    <color name="colorButton">@color/colorBlue</color>
+    <color name="colorButtonText">@color/colorWhite</color>
+
+    <color name="colorButtonFavourite">@color/colorGreyTransparent</color>
+    <color name="colorButtonFavouriteText">@color/colorBlue</color>
+
+    <color name="colorBottomSheetBackground">@color/colorWhite</color>
+    <color name="colorAvatarBackground">@color/colorWhite</color>
+    <color name="colorProductBackground">@color/colorGreyWhite</color>
+
+</resources>

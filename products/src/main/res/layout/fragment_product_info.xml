@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="@dimen/spacing_normal_12"
+    android:background="@color/colorProductBackground"
+    android:orientation="vertical">
+
+    <Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:elevation="3dp"
+        android:navigationIcon="@drawable/bitmap_ic_back"
+        style="@style/ToolbarStyle"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        android:background="@color/colorAvatarBackground">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/iv_product_info_avatar"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/product_info_avatar_size_360"
+                android:layout_gravity="center"
+                android:scaleType="centerCrop"
+                tools:src="@drawable/testimage" />
+
+            <TextView
+                android:id="@+id/tv_product_info_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_large_16"
+                android:layout_marginTop="@dimen/spacing_large_16"
+                android:layout_marginEnd="@dimen/spacing_large_16"
+                android:textColor="@color/colorPrimaryText"
+                android:textSize="@dimen/font_large_20"
+                tools:text="Sportswear Windrunner" />
+
+            <TextView
+                android:id="@+id/tv_product_info_price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_large_16"
+                android:layout_marginEnd="@dimen/spacing_large_16"
+                android:textColor="@color/colorPrimaryText"
+                android:textSize="@dimen/font_large_20"
+                android:textStyle="bold"
+                tools:text="8 200 Р" />
+
+            <TextView
+                android:id="@+id/tv_product_info_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_large_16"
+                android:layout_marginTop="@dimen/spacing_normal_12"
+                android:layout_marginEnd="@dimen/spacing_large_16"
+                android:textColor="@color/colorPrimaryText"
+                android:textSize="@dimen/font_normal_16"
+                tools:text="Ветровка Nike Sportswear Windrunner — это больше, чем новое поколение Windrunner. Она выглядит и сохраняет уровень комфорта оригинальной модели 1978 года. Конструкция включает дышащую подкладку из сетки, манжеты из рубчатой ткани и легендарный шеврон на груди." />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/btn_favourite"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginStart="@dimen/spacing_large_16"
+        android:layout_marginTop="@dimen/spacing_normal_12"
+        android:layout_marginEnd="@dimen/spacing_large_16"
+        android:layout_marginBottom="@dimen/spacing_large_16"
+        android:background="@drawable/rounded_button"
+        android:text="@string/btn_add_to_favourites"
+        android:textAllCaps="false"
+        android:textColor="@color/colorButtonText"
+        android:textSize="@dimen/font_normal_16" />
+
+</LinearLayout>

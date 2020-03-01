@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBottomSheetBackground"
+    android:orientation="vertical">
+
+    <Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:elevation="3dp"
+        android:navigationIcon="@drawable/bitmap_ic_cancel"
+        style="@style/ToolbarStyle"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_cities"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        tools:listitem="@layout/item_city" />
+
+</LinearLayout>

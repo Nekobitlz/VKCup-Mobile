@@ -1,2 +1,3 @@
 include ':app', ':documents_list', ':unsubscribe', ':photohandler'
 rootProject.name='vkcup'
+include ':products'
