@@ -13,14 +13,14 @@ import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.item_shop.view.*
 import kotlin.math.roundToInt
 
-class ShopsAdapter : ListAdapter<Shop, ShopViewHolder>(ShopDiffUtil) {
+class ShopsAdapter(private val onClick: (Shop) -> Unit) : ListAdapter<Shop, ShopViewHolder>(ShopDiffUtil) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ShopViewHolder {
         val itemView = LayoutInflater
             .from(parent.context)
             .inflate(R.layout.item_shop, parent, false)
 
-        return ShopViewHolder(itemView)
+        return ShopViewHolder(itemView, onClick)
     }
 
     override fun onBindViewHolder(holder: ShopViewHolder, position: Int) {
@@ -36,15 +36,19 @@ class ShopsAdapter : ListAdapter<Shop, ShopViewHolder>(ShopDiffUtil) {
     }
 }
 
-class ShopViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+class ShopViewHolder(
+    itemView: View,
+    private val onClick: (Shop) -> Unit
+) : RecyclerView.ViewHolder(itemView) {
 
     fun bind(shop: Shop) {
         itemView.apply {
-            //  iv_shop_avatar.clipToOutline = true
             tv_shop_name.text = shop.name
             tv_shop_status.text = shop.getStatus(resources)
 
             loadImageFromUrl(shop.avatar, iv_shop_avatar)
+
+            setOnClickListener { onClick(shop) }
         }
     }
 
