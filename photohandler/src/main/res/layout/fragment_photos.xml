@@ -6,10 +6,28 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <androidx.appcompat.widget.Toolbar
+    <Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="?actionBarSize" />
+        android:layout_height="?actionBarSize"
+        android:navigationIcon="@drawable/ic_back_outline_28">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end">
+
+            <ImageButton
+                android:id="@+id/toolbar_btn_add"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/spacing_medium_14"
+                android:src="@drawable/ic_add_outline_28"
+                android:background="@android:color/transparent" />
+
+        </LinearLayout>
+
+    </Toolbar>
 
     <TextView
         android:id="@+id/tv_photos_title"

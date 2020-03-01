@@ -1,5 +1,9 @@
 <resources>
-    <string name="app_name">PhotoHandler</string>
+    <string name="app_name">Albums</string>
     <string name="album_photo_count">photo</string>
     <string name="login_failed">Login failed</string>
+    <string name="toast_error_no_photo">You should choose photo!</string>
+    <string name="toast_success">Success!</string>
+    <string name="toast_error">An error occured</string>
+    <string name="editable_mode">Editing</string>
 </resources>
